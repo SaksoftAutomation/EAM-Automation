@@ -1,0 +1,1171 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="OAMP_T18196" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_ReportID" Type="InArgument(x:Int32)" />
+    <x:Property Name="In_SuiteID" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>OAMP_T18196_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.Activities.System.Text</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="OAMP_T18188_01" sap:VirtualizedContainerService.HintSize="659,14849" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="testcaseid" />
+      <Variable x:TypeArguments="x:String" Name="NewHazardNo" />
+      <Variable x:TypeArguments="x:String" Name="HazardNo" />
+      <Variable x:TypeArguments="x:String" Default="Description" Name="description" />
+      <Variable x:TypeArguments="x:String" Default="Description Updated" Name="movemodifydescription" />
+      <Variable x:TypeArguments="x:String" Default="P" Name="PrecautionNo" />
+      <Variable x:TypeArguments="x:String" Default="Precaution Description Updated" Name="UpdatedPre" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCredentials" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="OAMP-T18188_1_UAT_OAM_Asset_Desktop_Hazards_TC01 (Automation)" sap:VirtualizedContainerService.HintSize="623,14826" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="PrecautionNoCreated" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="589,118" sap2010:WorkflowViewState.IdRef="StartTest_4" Priority="High" ReportId="[In_ReportID]" SuiteId="[In_SuiteID]" TagName="Hazards" TestName="OAMP-T18188_01_UAT_OAM_Asset_Desktop_Hazards_TC01 (Automation)" testId="[testcaseid]" />
+      <Sequence sap:VirtualizedContainerService.HintSize="589,14625" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="SW Desktop (Global)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="555,14542" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="521,14250" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="TestUser2" />
+                  <Variable x:TypeArguments="x:String" Name="TestPwd2" />
+                  <Variable x:TypeArguments="x:String" Default="123" Name="Health" />
+                  <Variable x:TypeArguments="x:String" Default="456" Name="Flammability" />
+                  <Variable x:TypeArguments="x:String" Default="789" Name="Reactivity" />
+                  <Variable x:TypeArguments="x:String" Default="987" Name="Contact" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'InputBox'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,250" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="https://auth.preprod.apps.swppocpclu101.sws.int.southernwater.co.uk/login/[k(Enter)]" Version="V4">
+                  <uix:NTypeInto.EmptyFieldMode>
+                    <InArgument x:TypeArguments="uix:NEmptyFieldMode">
+                      <Literal x:TypeArguments="uix:NEmptyFieldMode" sap2010:WorkflowViewState.IdRef="Literal`1_2" Value="SingleLine">
+                        <Literal.Result>
+                          <OutArgument x:TypeArguments="uix:NEmptyFieldMode" />
+                        </Literal.Result>
+                      </Literal>
+                    </InArgument>
+                  </uix:NTypeInto.EmptyFieldMode>
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="ce829fc0-7047-4893-9401-83b0301e8105" ContentHash="i9TEqA52skS_D13Bbehi0Q" CvElementArea="146, 36, 996, 33" CvType="InputBox" DesignTimeRectangle="146, 37, 995, 32" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="872340f9-db61-4f83-a16a-b48b84fe5b09" InformativeScreenshot="32d82a152db42bfa014c2e8fe8f49194.png" Reference="Xc-565InekWGf1ajPaNvWg/yAp8-3QTokSUGmkbSG-00g" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="ce829fc0-7047-4893-9401-83b0301e8105" CvElementArea="132, 0, 240, 34" CvTextArea="163, 10, 79, 15" CvTextArgument="edge://newtab" CvType="Button" DesignTimeRectangle="131, 0, 241, 34" ElementType="Button" Guid="57e855bc-2197-4624-9e6f-f4e79ff90b78" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="487,325" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" SensitivityOperation="None" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Data&quot;, &quot;Login.xlsx&quot;)]">
+                  <ui:ExcelApplicationScope.Body>
+                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExcelReadRange AddHeaders="True" DataTable="[dtCredentials]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+                          <ui:ExcelReadRange.Range>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ui:ExcelReadRange.Range>
+                        </ui:ExcelReadRange>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ExcelApplicationScope.Body>
+                </ui:ExcelApplicationScope>
+                <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[TestUser2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[dtCredentials.Select("Key = 'TestUser2'")(0)("Value").ToString()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[TestPwd2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[dtCredentials.Select("Key = 'TestPwd2'")(0)("Value").ToString()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <uix:NClick ActivateBefore="True" DisplayName="Click 'Enter your username'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_40" KeyModifiers="None" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.ClickType>
+                    <InArgument x:TypeArguments="uix:NClickType">
+                      <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_2">
+                        <Literal.Result>
+                          <OutArgument x:TypeArguments="uix:NClickType" />
+                        </Literal.Result>
+                      </Literal>
+                    </InArgument>
+                  </uix:NClick.ClickType>
+                  <uix:NClick.MouseButton>
+                    <InArgument x:TypeArguments="uix:NMouseButton">
+                      <Literal x:TypeArguments="uix:NMouseButton" sap2010:WorkflowViewState.IdRef="Literal`1_2">
+                        <Literal.Result>
+                          <OutArgument x:TypeArguments="uix:NMouseButton" />
+                        </Literal.Result>
+                      </Literal>
+                    </InArgument>
+                  </uix:NClick.MouseButton>
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="f8486606-df3d-4a1c-b530-b33284f4c683" ContentHash="4VbeMYG6aEyD9Wx6yPCt4A" CvElementArea="40, 314, 1296, 46" CvType="InputBox" DesignTimeRectangle="40, 314, 1296, 46" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="469f307c-f891-43bb-aca6-ee637c87dc71" ImageBase64="" InformativeScreenshot="73f37ee867e177cdbf343aad1703922d.png" Reference="Xc-565InekWGf1ajPaNvWg/u25BUVPfG0GZPmb3-_807w" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="f8486606-df3d-4a1c-b530-b33284f4c683" CvTextArea="60, 330, 135, 16" CvTextArgument="Enter your username" CvType="Text" DesignTimeRectangle="60, 330, 135, 16" ElementType="Text" Guid="a589e9d2-b7f6-4931-a9a5-57e3d62e0b16" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="1" DisplayName="Type Into 'Enter your username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[TestUser2]" Version="V4">
+                  <uix:NTypeInto.DelayAfter>
+                    <InArgument x:TypeArguments="x:Double">
+                      <Literal x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="Literal`1_2" Value="1">
+                        <Literal.Result>
+                          <OutArgument x:TypeArguments="x:Double" />
+                        </Literal.Result>
+                      </Literal>
+                    </InArgument>
+                  </uix:NTypeInto.DelayAfter>
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="f8486606-df3d-4a1c-b530-b33284f4c683" ContentHash="4VbeMYG6aEyD9Wx6yPCt4A" CvElementArea="40, 314, 1296, 46" CvType="InputBox" DesignTimeRectangle="40, 314, 1296, 46" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="469f307c-f891-43bb-aca6-ee637c87dc71" ImageBase64="" InformativeScreenshot="73f37ee867e177cdbf343aad1703922d.png" Reference="Xc-565InekWGf1ajPaNvWg/u25BUVPfG0GZPmb3-_807w" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="f8486606-df3d-4a1c-b530-b33284f4c683" CvTextArea="60, 330, 135, 16" CvTextArgument="Enter your username" CvType="Text" DesignTimeRectangle="60, 330, 135, 16" ElementType="Text" Guid="a589e9d2-b7f6-4931-a9a5-57e3d62e0b16" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_41" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="14c9cee6-f8d6-4980-9934-351ad35659e8" ContentHash="RJpjORjRikiHovSwqDPF8A" CvElementArea="43, 397, 1293, 48" CvType="InputBox" DesignTimeRectangle="43, 397, 1293, 48" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="0a23fd57-a853-4603-ae3e-de3713e3ee3f" ImageBase64="" InformativeScreenshot="99bb3e3c6f5ef089b46d23ceb8fed4de.png" Reference="Xc-565InekWGf1ajPaNvWg/fNm_Gtc1JEyc8T2ykE1qnw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="14c9cee6-f8d6-4980-9934-351ad35659e8" CvTextArea="59, 414, 59, 13" CvTextArgument="Continue" CvType="Text" DesignTimeRectangle="59, 414, 59, 13" ElementType="Text" Guid="ecb11b0b-4a86-43af-8f55-b478a731bce8" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DelayBefore="2" DisplayName="Type Into 'Enter your password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[TestPwd2]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="ac211fe8-4ac7-47fc-8e0b-05da2742434f" ContentHash="o0-_AOE2zUuin6_BxOvd5A" CvElementArea="33, 258, 1298, 46" CvType="InputBox" DesignTimeRectangle="33, 258, 1298, 46" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="947d4d7f-7b22-46f0-9499-c03e95e39d1f" ImageBase64="" InformativeScreenshot="bb09d3f97ea4cf544d476e975a52592c.png" Reference="Xc-565InekWGf1ajPaNvWg/2xP-DAaorkW0sibWzSO9MA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="ac211fe8-4ac7-47fc-8e0b-05da2742434f" CvTextArea="52, 274, 132, 16" CvTextArgument="Enter your password" CvType="Text" DesignTimeRectangle="52, 274, 132, 16" ElementType="Text" Guid="58f869f7-e5cf-4d74-90f6-ed06338136af" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="44, 333, 54, 29" Guid="9a580f8f-9a05-41ef-9296-ea72d46551c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAdCAYAAADhLp8oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFZSURBVFhH7ZRBb4MgFID7/4McOtIsxBMhPTrXW6npYSHYf/WmExQspKbqLBuHLxEeyPvgwU4pBX+RJBYbu7quwcY3KEaSWGwksdhIYrHxv8UKioHwyhtbCqlKyBFabJ2XEVua3xWTAhjBgFAOpZL+MQsxX0wni3EHoqUTNyUWivfo/9Cya7fzKDoAY3SYSzgIOZoXYJ6YTsaOCX4Ykvck20qatkNg7PhfUytnnpg4AmnKqrD6zE4fhftt4o82aXxiXNz6Mc6mPWCeWEnvysORCSRri/a8lJg+MfshGCfftu07FiylrcT2TNz1fykBnCAndmZv1uLXJk6AXaa8gFdHTKkCKN4Dr4a5FSfLi6H2ItvoBYzcuN/wQTPIMhd/chuIPY1gQJo7WKmb1d8J5J/WuBVYVUye8p/HxRGTJ3jHU8vzedY9sQZfKa59Wi2ri21FEouNJBYXCr4BOiEHYxEpl6kAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Log in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_42" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="cc86d01f-a366-4c3c-99ad-993e70296d61" ContentHash="ZXwNEN2FokGuxtz-HIy-SQ" CvElementArea="45, 403, 1293, 48" CvType="InputBox" DesignTimeRectangle="45, 403, 1293, 48" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="2d4f4962-0cea-46bb-bba4-9c25a8602797" ImageBase64="" InformativeScreenshot="a6f57229ae0d1ca12f357abde03b1a62.png" Reference="Xc-565InekWGf1ajPaNvWg/jP7BqiGxI0ihjOUp2z5hSQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="cc86d01f-a366-4c3c-99ad-993e70296d61" CvTextArea="59, 420, 39, 16" CvTextArgument="Log in" CvType="Text" DesignTimeRectangle="59, 420, 39, 16" ElementType="Text" Guid="2ba1373c-928e-4efb-ab84-79f1d42b3b1b" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NHover DisplayName="Hover 'Manage-Launch link'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" HoverTime="3" sap2010:WorkflowViewState.IdRef="NHover_9" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NHover.Target>
+                    <uix:TargetAnchorable CVScreenId="b111f75a-a0cd-43a2-90c2-86c5479dd2d0" ContentHash="-DcfN52eKkKDyi6feLAgLA" CvTextArea="117, 771, 372, 25" CvTextArgument="Manage your asset lifecycle, workflow," CvType="Text" DesignTimeRectangle="117, 771, 372, 26" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="c757d528-66b5-45d1-85cc-a95800196fcc" InformativeScreenshot="c84d8b12abd6736a7c4ceb4a59be7540.png" Reference="Xc-565InekWGf1ajPaNvWg/P-hRLJcqAkWxjakZPkuW8Q" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="b111f75a-a0cd-43a2-90c2-86c5479dd2d0" CvTextArea="117, 666, 223, 27" CvTextArgument="Manage with Health" CvType="Text" DesignTimeRectangle="117, 666, 223, 27" ElementType="Text" Guid="265fa6ad-fc63-4981-bf01-4cef8712db94" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NHover.Target>
+                  <uix:NHover.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NHover.VerifyOptions>
+                </uix:NHover>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486.6666666666667,168" sap2010:WorkflowViewState.IdRef="StepStatus_14" ReportId="[In_ReportID]" Status="Compare" StepDescription="User should be able to logged in successfully" TakeScreenshot="True" TestId="[testcaseid]">
+                  <ra:StepStatus.StepName>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_3">
+                        <Literal.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </Literal.Result>User logged in as BTS Admin Role</Literal>
+                    </InArgument>
+                  </ra:StepStatus.StepName>
+                </ra:StepStatus>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="15" DelayBefore="4" DisplayName="Click 'Launch_Link'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_259" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="d3caeccd-fa7c-4f78-9ccb-bf702f532b0e" ContentHash="p0wIOgNenE2cl5plZ5GAXA" CvTextArea="79, 584, 48, 13" CvTextArgument="Launch" CvType="Text" DesignTimeRectangle="79, 584, 48, 13" DesignTimeScaleFactor="1" ElementType="Text" Guid="f2e26b57-ea7d-4bf0-903c-a3e168f5e099" ImageBase64="" InformativeScreenshot="db30cbcbfc051114be011bc5d98775ba.png" Reference="Xc-565InekWGf1ajPaNvWg/nHshY2BIk0y6NI6N_UcTtA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NHover DelayBefore="10" DisplayName="Hover 'Search_Icon'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NHover_10" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NHover.Target>
+                    <uix:TargetAnchorable CVScreenId="94c608ab-aaa8-47c4-b027-7bca46bbb0ea" ContentHash="Q2XOm7DmPEKdf_viPTwJCA" CvElementArea="25, 241, 22, 22" CvType="Icon" DesignTimeRectangle="23, 239, 26, 26" DesignTimeScaleFactor="1" ElementType="Icon" Guid="8166ce5b-d9d2-404e-be2a-d25c6e5e1f4e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGWSURBVEhL7ZWhjsJAEIZ5CdoEUVGBQFQhEAhEBQ5BKKkgECoQTeg7lEdAIhCICtCVCB4AURIeAJKKCkC0CaLJXGYTyEJne7k77sTdiS9N9u/0225ntwVZlqFYLH47BUmS4Cf4w6JqtQqtVouhqip5Tx7viprNJqzXa0jT9E4cxzCdTj8kzBWNx2O4Xq/geR40Go37eL/fh81mA5fLBXRdf6gRIRThA1BiWRaZI4vFAg6HAyiKQuY8QhHOGJeHyniCIIDJZEJmPKSoUqmwb1EulzPZM47jwG63IzMeUoQNEIZhZpwCv935fCYzHlKExafTKTNOUa/X4Xg8khkPKSqVSqwRNE3LZM/Ytg2r1YrMeITNsFwuYTabkdkNnBA2g2EYZM4jFOHbRFGU2964v7bbLZk9IxQhtVoN9vs92y/8hh2NRqz9fd9np8RwOHyoo8gVIbg8ruuyYwhPAhTP5/O7uN1uQ5IkMBgMMrU87Mf3VW6yXq9H5shLREi322UyvFL5y0SIaZrQ6XTI7KWiPP5Fn+a3iWR4A8DXyRNQNZAUAAAAAElFTkSuQmCC" InformativeScreenshot="f1aede57e3c1662c21798b833099d031.png" Reference="Xc-565InekWGf1ajPaNvWg/NBoHLrmWmUaXnnj4i7PEhg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
+                  </uix:NHover.Target>
+                  <uix:NHover.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Icon 'Search_Icon'" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable CVScreenId="94c608ab-aaa8-47c4-b027-7bca46bbb0ea" ContentHash="Q2XOm7DmPEKdf_viPTwJCA" CvElementArea="25, 241, 22, 22" CvType="Icon" DesignTimeRectangle="23, 239, 26, 26" DesignTimeScaleFactor="1" ElementType="Icon" Guid="8166ce5b-d9d2-404e-be2a-d25c6e5e1f4e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGWSURBVEhL7ZWhjsJAEIZ5CdoEUVGBQFQhEAhEBQ5BKKkgECoQTeg7lEdAIhCICtCVCB4AURIeAJKKCkC0CaLJXGYTyEJne7k77sTdiS9N9u/0225ntwVZlqFYLH47BUmS4Cf4w6JqtQqtVouhqip5Tx7viprNJqzXa0jT9E4cxzCdTj8kzBWNx2O4Xq/geR40Go37eL/fh81mA5fLBXRdf6gRIRThA1BiWRaZI4vFAg6HAyiKQuY8QhHOGJeHyniCIIDJZEJmPKSoUqmwb1EulzPZM47jwG63IzMeUoQNEIZhZpwCv935fCYzHlKExafTKTNOUa/X4Xg8khkPKSqVSqwRNE3LZM/Ytg2r1YrMeITNsFwuYTabkdkNnBA2g2EYZM4jFOHbRFGU2964v7bbLZk9IxQhtVoN9vs92y/8hh2NRqz9fd9np8RwOHyoo8gVIbg8ruuyYwhPAhTP5/O7uN1uQ5IkMBgMMrU87Mf3VW6yXq9H5shLREi322UyvFL5y0SIaZrQ6XTI7KWiPP5Fn+a3iWR4A8DXyRNQNZAUAAAAAElFTkSuQmCC" InformativeScreenshot="f1aede57e3c1662c21798b833099d031.png" Reference="Xc-565InekWGf1ajPaNvWg/NBoHLrmWmUaXnnj4i7PEhg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
+                      </uix:VerifyExecutionOptions.Target>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NHover.VerifyOptions>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NHover>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486.6666666666667,168" sap2010:WorkflowViewState.IdRef="StepStatus_31" ReportId="[In_ReportID]" Status="Compare" StepDescription="Maximo UI suite should be visible" StepName="User clicks on Manage" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search_InputBox'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_262" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="52e5e56c-665f-48cf-a807-990c6f1175f5" ContentHash="efq_x7dzi0yXKR4iuIDeFQ" CvTextArea="59, 244, 134, 16" CvTextArgument="Find Navigation Item..." CvType="Text" DesignTimeRectangle="59, 244, 134, 16" DesignTimeScaleFactor="1" ElementType="Text" Guid="5d5bf7d3-ecb0-4116-a77d-f6f41580326a" ImageBase64="" InformativeScreenshot="4ef14d93f62e24e58ade0ca11d443e93.png" Reference="Xc-565InekWGf1ajPaNvWg/UUHi9Uu-m0yWwLtm-bHe-g" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="3" DisplayName="Type Into 'Search-InputBox-Type'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,250" sap2010:WorkflowViewState.IdRef="NTypeInto_93" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="Hazards" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="fc04d3a4-b57e-4cec-8f97-38726107b0a9" ContentHash="3TJO_PxEl0qNkMISYddr9g" CvTextArea="41, 151, 108, 14" CvTextArgument="Find Navigation Item..." CvType="Text" DesignTimeRectangle="41, 151, 108, 14" DesignTimeScaleFactor="1" ElementType="Text" Guid="2cc5d1e1-caec-4e28-8a5a-bf967238c12f" ImageBase64="" InformativeScreenshot="4dce041fe8685421312c6ffaa1bf6a8c.png" Reference="Xc-565InekWGf1ajPaNvWg/y_JYzQQi30Knr0IPv8NQeQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="fc04d3a4-b57e-4cec-8f97-38726107b0a9" CvTextArea="41, 179, 59, 10" CvTextArgument="Start Center" CvType="Text" DesignTimeRectangle="41, 179, 59, 10" ElementType="Text" Guid="b361f065-2f82-4f5e-8179-ff7294c5da4d" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DisplayName="Click 'Hazards-Link'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,225" sap2010:WorkflowViewState.IdRef="NClick_260" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="dade9c41-240a-48f2-9006-67620c7dffc7" ContentHash="OC8uECGWoEejoJhIhEnKHQ" CvTextArea="60, 349, 47, 12" CvTextArgument="Hazards" CvType="Text" DesignTimeRectangle="60, 349, 47, 12" DesignTimeScaleFactor="1" ElementType="Text" Guid="edf043c5-3c66-4d26-8508-ae3bed576145" InformativeScreenshot="9171a4dfce1d4900bb69b94a0b4c6c61.png" Reference="Xc-565InekWGf1ajPaNvWg/Pz_PUV47qUa0eEjtKvWo3Q" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="dade9c41-240a-48f2-9006-67620c7dffc7" CvTextArea="58, 280, 74, 12" CvTextArgument="Start Center" CvType="Text" DesignTimeRectangle="58, 280, 74, 12" ElementType="Text" Guid="2b77b9d5-01cc-41b0-bafe-a15525454460" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New Hazard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,189" sap2010:WorkflowViewState.IdRef="NClick_261" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="5de4747c-de11-4be4-80cb-1f23e015a8d2" ContentHash="SgBFl4ikz0-1oAgNq6zAKw" CvElementArea="67, 318, 20, 19" CvType="Icon" DesignTimeRectangle="131, 674, 45, 43" DesignTimeScaleFactor="1.5" ElementType="Icon" Guid="db0963e3-e012-44e6-b47b-4e6b026cc5bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAXCAYAAAARIY8tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHTSURBVEhL3VUxS0JRFO5XuDm4ujo4CA4uDg7i4CAOCk9HV0cHRweDgpKSlqAgGiIqKnqDg1FRS0W1KT2pqDYhl/DEd+C9znv3yjPCoT74xHPuufc7595z75ujGWI8HtM/FPikD4e/BQvgx4+vb+90en5Gu/t7zG63S0/PL9pYUMJXYG21TalUitLpNBmGwcxkMpRMJmlluaWdIzFRYDgcUiKRoHA4TJ1ORxlHRdFolGMQK8cktALYkkKhwNnivy4GxMKIyWazri2T0ApgW3K5nJJZo9Gger3u8iEmn89Ta37B8UkoAsgE2R8cHbr8YCQSoVAopPixhaii3++zLaEIXFxdssDd/QPbo9GIrm9umTiPYDDo2HaFvV6P56C7YEsoAghCMCbBxkKBQEBLe0HLsqhUKpFpmmxL+FaALLEQaFdg294K7G6TUASQDYKPzROXH5x0BmjZqc8ARBehM7xdVKvVqFqtunyIKRaL1Gw2HZ+EVgCdBIFKpaKISGIMMbjlg8HA8UtoBUBcMNzSWCzmHKYkzgrjoPddkpgoYLO9uMSL4O0pl8tMvE3xeNy1LZISvgIgMkSH7Gxu0fb6Brfjo/W9JV5KTCXwU0rM9IsG/HUBoi/O7u3t+vlKbQAAAABJRU5ErkJggg==" InformativeScreenshot="337d5b5bce9f143bb1548fd32b64ecba.png" Reference="Xc-565InekWGf1ajPaNvWg/mKdeCsLk-keijN6X1wLTag" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="5de4747c-de11-4be4-80cb-1f23e015a8d2" CvTextArea="67, 297, 84, 10" CvTextArgument="Common Actions" CvType="Text" DesignTimeRectangle="135, 638, 158, 19" ElementType="Text" Guid="11720360-d6e3-4f27-963f-26a3ff7fc326" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomRight" X="-17" Y="-13" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="487,165" sap2010:WorkflowViewState.IdRef="StepStatus_52" ReportId="[In_ReportID]" Status="Compare" StepDescription="Hazard UI should get opened" StepName="Click on Hazards" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New-Hazard-No'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,225" sap2010:WorkflowViewState.IdRef="NClick_263" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="552d9b96-4a5e-4279-8a2f-350346376e80" ContentHash="XUtlBbHe-EmrsuyhgE0RXg" CvElementArea="265, 264, 104, 34" CvType="InputBox" DesignTimeRectangle="265, 264, 104, 34" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="4dc5ca42-ece1-4253-953f-6c3d46ea2bcb" ImageBase64="" InformativeScreenshot="d33c5b95011bbe24da204218279ede18.png" Reference="Xc-565InekWGf1ajPaNvWg/mrx5--YtL0KQAj2XJ02BxQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target DesignTimeRectangle="264, 240, 53, 24" Guid="229850e7-28c5-4910-a86e-57e5c8fead62" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADUAAAAYCAYAAABa1LWYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHiSURBVFhH7ZW9TsJQFIB9EXdHBxMHFweo3RwcGBwcXDQ2Ki/gqCbWxAfBqO+AUowOxsEof0UnJdiWe1tkOt576G2v0NSIv0WGL3DuuT/nu6fQMUopcEirg4g4yQynVIt6wHluU0TEhLpI1KK/znBKEdIGDnVbSMdxkajJSWE4paIGk85IKin8H6nm9RXcjU+AU6q8zRk6KGkNctVu3C6fgJZWYN9gfzTyvO9CnG9G5CT6pJ62tqFxVkQp6/wSzN2DMJ9UqdupaRQSVCZnwnyMlGvVIbemgKL47Bk4x6of4ZxgPK1DvkUhvyONbRyDSdgrhVRxD3VlM9hXXq9p2mBStm1DaT6DQrWFRXAazTDPpUQhEvxwUj6FQuEG6hZ7x/XIc4LimGzbKUDxqI4iYhy77UsFkmwdyrOLMOwXqB4OKMUfOdEh/mldFMP8Rzolz2MSOhfqLbbnYgIpv8vBPLFu0MeveXMLD5klcB8eoZZZxjjIx0jJOT6enct2v0cIyd0R+Vgpv1MDS8Xib3pc8jC2zRwWpxsUXOeyWzy7dfGbwOL4GqkjWFTtPuwqizdXFZhdz0GZmn1SlJ+hpkBVVSSlfrVUBJ7nIb2xPPbTfFrqLzKSSgojqaTwrhQh5FeJqikeCq9uOkiCKYGPOwAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target CVScreenId="552d9b96-4a5e-4279-8a2f-350346376e80" CvElementArea="329, 197, 89, 35" CvTextArea="341, 209, 64, 11" CvTextArgument="Precautions" CvType="Button" DesignTimeRectangle="329, 196, 90, 36" ElementType="Button" Guid="93adb8c8-6ab7-4a3e-9cb9-c7c91f34763a" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type New-Hazard-No'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,250" sap2010:WorkflowViewState.IdRef="NTypeInto_94" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[NewHazardNo + New Random().Next(1000000, 9999999).ToString()]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="552d9b96-4a5e-4279-8a2f-350346376e80" ContentHash="UwTcX0n95ECggidaum4Q7g" CvElementArea="265, 264, 104, 34" CvType="InputBox" DesignTimeRectangle="265, 264, 104, 34" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="4dc5ca42-ece1-4253-953f-6c3d46ea2bcb" ImageBase64="" InformativeScreenshot="d33c5b95011bbe24da204218279ede18.png" Reference="Xc-565InekWGf1ajPaNvWg/PJY2kCkuqEyD6cE2oB2AsQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target DesignTimeRectangle="264, 240, 53, 24" Guid="229850e7-28c5-4910-a86e-57e5c8fead62" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADUAAAAYCAYAAABa1LWYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHiSURBVFhH7ZW9TsJQFIB9EXdHBxMHFweo3RwcGBwcXDQ2Ki/gqCbWxAfBqO+AUowOxsEof0UnJdiWe1tkOt576G2v0NSIv0WGL3DuuT/nu6fQMUopcEirg4g4yQynVIt6wHluU0TEhLpI1KK/znBKEdIGDnVbSMdxkajJSWE4paIGk85IKin8H6nm9RXcjU+AU6q8zRk6KGkNctVu3C6fgJZWYN9gfzTyvO9CnG9G5CT6pJ62tqFxVkQp6/wSzN2DMJ9UqdupaRQSVCZnwnyMlGvVIbemgKL47Bk4x6of4ZxgPK1DvkUhvyONbRyDSdgrhVRxD3VlM9hXXq9p2mBStm1DaT6DQrWFRXAazTDPpUQhEvxwUj6FQuEG6hZ7x/XIc4LimGzbKUDxqI4iYhy77UsFkmwdyrOLMOwXqB4OKMUfOdEh/mldFMP8Rzolz2MSOhfqLbbnYgIpv8vBPLFu0MeveXMLD5klcB8eoZZZxjjIx0jJOT6enct2v0cIyd0R+Vgpv1MDS8Xib3pc8jC2zRwWpxsUXOeyWzy7dfGbwOL4GqkjWFTtPuwqizdXFZhdz0GZmn1SlJ+hpkBVVSSlfrVUBJ7nIb2xPPbTfFrqLzKSSgojqaTwrhQh5FeJqikeCq9uOkiCKYGPOwAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target CVScreenId="552d9b96-4a5e-4279-8a2f-350346376e80" CvElementArea="329, 197, 89, 35" CvTextArea="341, 209, 64, 11" CvTextArgument="Precautions" CvType="Button" DesignTimeRectangle="329, 196, 90, 36" ElementType="Button" Guid="93adb8c8-6ab7-4a3e-9cb9-c7c91f34763a" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486.6666666666667,168" sap2010:WorkflowViewState.IdRef="StepStatus_32" ReportId="[In_ReportID]" Status="Compare" StepDescription="New Hazard screen should appear" StepName="Click on New Hazard" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Hazard-Description'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_269" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="eb66d734-12c7-4afd-a580-3d70258dcb1a" ContentHash="8EuI9lH3lUWNxNwCqkOx0w" CvElementArea="711, 637, 626, 65" CvType="InputBox" DesignTimeRectangle="711, 637, 626, 65" DesignTimeScaleFactor="1.5" ElementType="InputBox" Guid="12d219ed-20c5-453e-8fc0-15c840c3968b" InformativeScreenshot="67a89916a2662f6561a2c9a1e51f893c.png" Reference="Xc-565InekWGf1ajPaNvWg/MR96bv9MZ0-mxuOS7_ElTw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="eb66d734-12c7-4afd-a580-3d70258dcb1a" CvTextArea="437, 608, 82, 19" CvTextArgument="* Hazard" CvType="Text" DesignTimeRectangle="437, 608, 82, 19" ElementType="Text" Guid="5816b397-3681-4d22-a11f-90c5bc06c62b" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="eb66d734-12c7-4afd-a580-3d70258dcb1a" CvTextArea="1431, 608, 112, 24" CvTextArgument="Organization" CvType="Text" DesignTimeRectangle="1431, 608, 112, 24" ElementType="Text" Guid="b7d617b8-434a-495f-bf8e-6af83a8b4924" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Hazard-Description-Value'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_97" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[description]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="5c1615af-0883-4568-82bf-513a6e71db87" ContentHash="H6RCR5l48E-gfQWGeAoDBQ" CvElementArea="713, 640, 616, 62" CvType="InputBox" DesignTimeRectangle="713, 640, 616, 62" DesignTimeScaleFactor="1.5" ElementType="InputBox" Guid="30cf3f32-584a-4041-9284-b26c414e6e81" InformativeScreenshot="22c042db4f56634e9c4e4d810f40e30a.png" Reference="Xc-565InekWGf1ajPaNvWg/1Zaaw8G7FUGBd-OzHf1t2A" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="5c1615af-0883-4568-82bf-513a6e71db87" CvTextArea="437, 608, 82, 19" CvTextArgument="* Hazard" CvType="Text" DesignTimeRectangle="437, 608, 82, 19" ElementType="Text" Guid="4e359571-8185-4191-9c86-27528a41876f" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="5c1615af-0883-4568-82bf-513a6e71db87" CvTextArea="1431, 608, 112, 24" CvTextArgument="Organization" CvType="Text" DesignTimeRectangle="1431, 608, 112, 24" ElementType="Text" Guid="54e1bcea-0020-4057-9ed6-8afa3fdc4393" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,392" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Hazard-Type'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_330" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable CVScreenId="bd19a3b5-f750-46d8-bf4e-155bfa258c06" ContentHash="yPWqGIK120qMaCgUvQi70g" CvElementArea="1056, 263, 33, 34" CvType="Button" DesignTimeRectangle="1056, 263, 33, 34" DesignTimeScaleFactor="1" ElementType="Button" Guid="fa50f9f8-61ac-45c7-973d-ef2e27fc3770" InformativeScreenshot="968712aebc38487f126cd8dd0a88c1aa.png" Reference="Xc-565InekWGf1ajPaNvWg/9ulGQqNSn0q1Gf0BuX6FZw" ScopeSelectorArgument="&lt;wnd app='vmware-view.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                                <uix:Target CVScreenId="bd19a3b5-f750-46d8-bf4e-155bfa258c06" CvTextArea="955, 248, 24, 12" CvTextArgument="Type" CvType="Text" DesignTimeRectangle="955, 248, 24, 12" ElementType="Text" Guid="b426a68e-078b-4367-b2fc-65ce3844976c" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                <uix:Target DesignTimeRectangle="1105, 243, 78, 21" Guid="9a977d61-4012-4596-a075-5d3d5253f84c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE4AAAAVCAYAAADo49gpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIJSURBVFhH7ZSxSgNBEIZ9Ah/ABxAsfYmUvoCIYhO1kxSpLSzSGyGihTYWvoCloIWdgoVikIh6JrG+S3KJccy/56zjcsdtNiCCW/xk95/Zud1vZzMVhiF5jS8PzlEenKM8OEd5cI7y4BzlwTlqLHDLu7FSWmxSFfeHdHbTSY39RVmDewgiKh/FVNyL6eKup/3j8y5tnSQwm28RrVT71HiNdNxWvwXusTVqgOpA/abFbWUNDoBYDAoHndkgml79UB6gYTxbChU8GS9UetRsd3UteBDG8ABuofKu198HIT21Q1rciamwnfgY4zuq3sjjevI7gAKPAfFazoeH+VxpqHLMM2CtjazBodvQdRCea9BOukqCNDvu9KqjD4cc5CKGHPgMBpAYisxFHAeWY85BPnyzg3gt5rwWfrE2UJDM/PWDWPkYbx7G2s+TFTjAQhfgViDcED9XbIwPY4JDjNdAmGOTa7W+rs2ST1WCY7BZOTgoukd+BzETUBY4ePpVfHUl/DxZgZNwzLkcm+AAyDyo7Dj4DGMScBJEI+iq2qafBU52mey+POWCq79ENF/+3jB7uB38YvN8y8+txEcHyBiEGnyj0scYNeWmGQrqLVUjVSsrB2N43DVcM2ut3OPlbUd53LHIR66NrP/jvH4qF9x1vaNv8j8I3ZjGwZTvOEd5cI7y4BzlwTnKg3NSSJ+WLKX7sd5FmQAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                                <uix:Target DesignTimeRectangle="1107, 316, 172, 46" Guid="c3f15455-1972-4708-8fc1-1889ac035ecc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKwAAAAuCAYAAAC1SfILAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANFSURBVHhe7ZrPahNRFId9APEJfAHd+QyCG0H3IqKlC/9stIKuXXRR3NaKFVp3LnwIQV/BrYJgU1pcJhUntiNfyi9zMpm0QZOYE3+Lj9x75tx7Z26/nLmlPdNut0tjsmBhTSosrEmFhTWpsLAmFRbWpMLCmlRYWJMKC2tSYWFNKk4U9uzyr0bOLR0Z88fUfWpybxSnCtsUN2ZSWFiTCgtrUmFhTSosrEmFhTWpsLAmFRbWpMLCmlRYWJOKfy7sh08H5fkHg3+Ke/buZ2Ou2NnrlDdfFOXnnU7j9Ulwa70o33780XhtXL7udsoLjw/7z/W3850Ge3n3ddF4bVGYC2GvP++Wu/vjyzcLYSfBnY1uX1Lkvbxa9aeBhR1mpsKy+Q+3i151ogqTi6xXVo//oUYxxFUlU0xz31g/6uVTMcnj89ra8XjiWpeq/uRN0RuPVPQlF23yIQqHkIrX3woIyjq6lzpxzqWNSrJRce2Fng9ok8cXgfX0vPSJ3365ePLOhbDaeCEp2HBtOj9IqiptxEM2VdjlV0VfDGLkISKxiyuVwBI7iojAatcFJo8xiEkcKWjzyTVyyIV7m93+OoIcPVPMJe/+ZiWT1mLe7ffVF4IczRn3gryra9V6jAf6el5yLj097OcsCnNfYbXhfCIm7SisJIzC0ycex2gcgmotrlMF6Usa5aofKzoxXY/VVcTxEeSh6nFftJmnPlZzU1UVi2+L+l4gLHNpDcXjkSCOWRTmRthv34evjStsrLaROAYkbGu/mhNh6Y8SVn3kYB1JF8+n44KMjGFuCRrhfhBR9xcrbJOwrb3h8RZ2kLkTlj5HAMlDHhJSGeOYpnFIE48ETcIyB697YhKVT67RVrx+XiUWX8n09RqHKKZEjvGYT07ci/o1xnK/9C3sIFM7wzJWqPqMElavab0yEVDHgvgajWNAwurMTFvSjBL2S+ugfLTV/MtVPBbEuECseFyJObQVj79c6UjAPa5sFb2jBJW0Lh9tPYdyiFnYQSYu7CxB2HgkMPmwsCYV/5WwJj8W1qTCwppUWFiTCgtrUmFhTSosrEmFhTWpsLAmFRMX1php0+TeKE4U1ph5w8KaVFhYkwoLa1JhYU0i2uVvKs37I3OHLz8AAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
+                <uix:NMouseScroll KeyModifiers="{x:Null}" DelayAfter="10" Direction="Down" DisplayName="Mouse Scroll ' Hazard(3)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="NMouseScroll_4" InteractionMode="HardwareEvents" MovementUnits="2" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NMouseScroll.Target>
+                    <uix:TargetAnchorable CVScreenId="f0ca56e0-1f58-4011-b733-e9bea69623a8" ContentHash="qg0oKVjAqk2n-MYeBtZAeg" CvTextArea="510, 548, 81, 18" CvTextArgument="* Hazard" CvType="Text" DesignTimeRectangle="510, 548, 81, 18" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="26fc3f05-3925-4979-ab9d-082833402dd7" InformativeScreenshot="c8691fe0bedad47139a6cd66303161b9.png" Reference="Xc-565InekWGf1ajPaNvWg/R8ZJMDpAOkCmnLJ-ZQJPxg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="f0ca56e0-1f58-4011-b733-e9bea69623a8" CvTextArea="1503, 548, 112, 22" CvTextArgument="Organization" CvType="Text" DesignTimeRectangle="1503, 548, 112, 22" ElementType="Text" Guid="c33e0dff-e94b-4069-b999-cda9d22bcd6c" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NMouseScroll.Target>
+                </uix:NMouseScroll>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button(4)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_332" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="26216aa3-7b6f-4cc2-a0af-e1b5df8de452" ContentHash="W9sQDvqr3U-e43kzmA9jgQ" CvTextArea="507, 570, 202, 19" CvTextArgument="Can Have Precautions?" CvType="Text" DesignTimeRectangle="507, 570, 202, 20" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="089f30a1-9138-47e9-93e5-6e0d3d3c8811" InformativeScreenshot="5ad8981615af8933c75fc370e7c552f8.png" Reference="Xc-565InekWGf1ajPaNvWg/bRtK0DnzJEqHXP4WkPmcig" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="26216aa3-7b6f-4cc2-a0af-e1b5df8de452" CvTextArea="825, 573, 60, 19" CvTextArgument="Health" CvType="Text" DesignTimeRectangle="825, 573, 60, 19" ElementType="Text" Guid="f6ad601b-6984-43c4-ae1c-04fb9ac434af" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomLeft" X="34" Y="30" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Hazardous Material-Health-Enter'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_114" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[Health]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="afa564cd-df8a-4060-8f38-93f0e8e86949" ContentHash="QV1MiRqNck-rztGoibjN4A" CvTextArea="825, 573, 60, 19" CvTextArgument="Health" CvType="Text" DesignTimeRectangle="825, 573, 60, 19" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="90fa6661-17de-4a8d-a5c4-85030c977225" InformativeScreenshot="fccc198be7a230364262edbd2e5baf9e.png" Reference="Xc-565InekWGf1ajPaNvWg/Oz9yFnPpwEy9UwnJ1DQIBg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="afa564cd-df8a-4060-8f38-93f0e8e86949" CvTextArea="507, 570, 202, 19" CvTextArgument="Can Have Precautions?" CvType="Text" DesignTimeRectangle="507, 570, 202, 20" ElementType="Text" Guid="f23a8267-9aa1-42c3-9128-d2651e9b3106" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomLeft" X="18" Y="30" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Hazardous Material-Flammability-Enter'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,250" sap2010:WorkflowViewState.IdRef="NTypeInto_115" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[Flammability]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="924ff14d-2c1f-4ace-a669-a02737bfe987" ContentHash="FP_9zb6m7kyFo8x_ltq18w" CvTextArea="825, 726, 117, 22" CvTextArgument="Flammability" CvType="Text" DesignTimeRectangle="825, 726, 117, 22" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="b48fdc8e-6779-451f-b2f6-0b96b5410e7c" InformativeScreenshot="97a786beed78c5f558076ae379cf6041.png" Reference="Xc-565InekWGf1ajPaNvWg/uq-KgoPqZUekvMaz3v2iAw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="924ff14d-2c1f-4ace-a669-a02737bfe987" CvTextArea="507, 723, 278, 19" CvTextArgument="Can Have Hazardous Materials?" CvType="Text" DesignTimeRectangle="507, 723, 278, 19" ElementType="Text" Guid="258e10b3-2a1f-4d5e-845c-4ba2d6a08c73" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomLeft" X="20" Y="24" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="487,165" sap2010:WorkflowViewState.IdRef="StepStatus_33" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that Description should appear" StepName="Add Hazard Description" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Hazardous Material-Reactivity-Enter'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,250" sap2010:WorkflowViewState.IdRef="NTypeInto_113" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[Reactivity]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="f26eb970-8322-41c3-a19f-0d4c5debdc08" ContentHash="WLqjDfLSakOYuBDhYrpRCw" CvTextArea="827, 839, 87, 24" CvTextArgument="Reactivity" CvType="Text" DesignTimeRectangle="827, 839, 87, 24" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="aab7dc37-28eb-4f2f-89be-e76a39268cd3" InformativeScreenshot="63cff18b1f301112f3ae091cc37f702a.png" Reference="Xc-565InekWGf1ajPaNvWg/ncjckiao9EiLACl1OFg6OQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="f26eb970-8322-41c3-a19f-0d4c5debdc08" CvTextArea="507, 837, 176, 21" CvTextArgument="Can Have Tag Outs?" CvType="Text" DesignTimeRectangle="507, 837, 176, 21" ElementType="Text" Guid="faa2207f-fbcd-4760-85bd-9b7efe771d72" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomLeft" X="20" Y="25" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Reactivity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,189" sap2010:WorkflowViewState.IdRef="NMouseScroll_5" InteractionMode="HardwareEvents" MovementUnits="1" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NMouseScroll.Target>
+                    <uix:TargetAnchorable CVScreenId="777f7ee4-8cc5-4a18-b28f-d195035373c9" ContentHash="NPYu1RcAPUq6KfUzqgFtPg" CvTextArea="827, 651, 87, 24" CvTextArgument="Reactivity" CvType="Text" DesignTimeRectangle="827, 651, 87, 24" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="53d852c2-b944-47e4-b5ab-6fde78c36a34" InformativeScreenshot="3ddaeea6b3e8b67e67f16cd4a4c1213d.png" Reference="Xc-565InekWGf1ajPaNvWg/rw2VTfCB0EWYKZAZVwY6lA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="777f7ee4-8cc5-4a18-b28f-d195035373c9" CvTextArea="825, 537, 115, 24" CvTextArgument="Flammability" CvType="Text" DesignTimeRectangle="825, 537, 115, 24" ElementType="Text" Guid="41d08106-599d-4e20-b935-7182a6ff793a" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NMouseScroll.Target>
+                </uix:NMouseScroll>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Hazardous Material-Contact-Enter'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,250" sap2010:WorkflowViewState.IdRef="NTypeInto_116" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[Contact]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="47d7be88-db03-472b-8a64-8710944a599b" ContentHash="TasN7vzElUq3Rks6gqD_sg" CvTextArea="825, 765, 70, 19" CvTextArgument="Contact" CvType="Text" DesignTimeRectangle="825, 765, 70, 19" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="c2ca2d4e-3464-470f-8651-ad668a35f39e" InformativeScreenshot="4a2e06bdeb684e0be0600d7310876e44.png" Reference="Xc-565InekWGf1ajPaNvWg/VglbPPh7Qky1Zu5fLy7csw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="47d7be88-db03-472b-8a64-8710944a599b" CvTextArea="507, 648, 176, 23" CvTextArgument="Can Have Tag Outs?" CvType="Text" DesignTimeRectangle="507, 648, 176, 23" ElementType="Text" Guid="ca17542a-a788-49f2-973f-8a2583ab2d7f" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomLeft" X="16" Y="24" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Up" DisplayName="Mouse Scroll 'Contact'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,189" sap2010:WorkflowViewState.IdRef="NMouseScroll_6" InteractionMode="HardwareEvents" MovementUnits="5" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NMouseScroll.Target>
+                    <uix:TargetAnchorable CVScreenId="24910025-0247-4137-81e0-bffb37dfc3d1" ContentHash="JnDDCWG4cUKOyixjKyqoXQ" CvTextArea="825, 765, 70, 19" CvTextArgument="Contact" CvType="Text" DesignTimeRectangle="825, 765, 70, 19" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="f45ed120-9df0-46ac-a9c6-bb284242a468" InformativeScreenshot="2dca04cf3b66de5846028ed9fa7d4bb9.png" Reference="Xc-565InekWGf1ajPaNvWg/meq3G0_EpUuAxcvjrKv5FQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="24910025-0247-4137-81e0-bffb37dfc3d1" CvTextArea="827, 651, 87, 24" CvTextArgument="Reactivity" CvType="Text" DesignTimeRectangle="827, 651, 87, 24" ElementType="Text" Guid="ff41e32c-8101-4f9a-a106-7c43d9a45240" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NMouseScroll.Target>
+                </uix:NMouseScroll>
+                <uix:NGetText DisplayName="Get Text 'Click-Hazard-No'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,189" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" TextString="[HazardNo]" Version="V4">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable CVScreenId="1114f901-478a-4b58-a1e2-1b44fcd4c763" ContentHash="WVobC8jwb0SgN_YmLCF9Yw" CvElementArea="265, 264, 104, 34" CvType="InputBox" DesignTimeRectangle="265, 264, 104, 34" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="0f83b71a-da62-4709-bcc9-df6a4c3479e7" ImageBase64="" InformativeScreenshot="f049015633d3914baf92e55bd51b56b7.png" Reference="Xc-565InekWGf1ajPaNvWg/GNzENrHld021qru1z3xv2w" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="260, 240, 58, 22" Guid="1a3ab82c-01dd-4df8-9515-1612e222ad06" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAWCAYAAACR1Y9lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGySURBVFhH7ZK/TsJAGMB9EXcfgMHBwaSHrZHRgdHFQMBA3R1MTJAETHwOqRp8BSVUkGgMA8GmXogDQwMVqiQun961PVrFamIdrDf80t7353q/7zpnWRb8B7ho1OCiUYOLRg0uGjW4qBfjpg3d+QUwNM0Xf1T3YCW+BYpur8d6FdJoGQrqwFf3W7z/fhBfivZ3dmHcuKSiw9sW4OIhy0VKFMcWqaSLFltiuSBR08SgyAgQspGKqq/GjSdQGS5GFqhFicWQrAA2zekemzm2r7c/k8mFJ2oYBuD1JJUkT7NvshwRZYdzkCSJHmjSq8F5/Y4eeNbk3QOTAUxGNbhSNFo7c1iOOOkjA3GHc3+aCk902GjZks7NkrWb+86NEnGCt46IlVHig4B3YL49nL+B1Tl9of66RqcNOLkBRv+BPs12h+WCRL05Epclmb7PkvT2ufkgUfdGQxUNpFmAVSkPZ/oLXQ+1Y8iKAhzUn2Bi1aAkrIEgCCCmt2lcLF3THlEUGXGUhSO9B5W8QGvJOpt6e89XAA80O77fZN8c46q9l6f/pPs8PdMn/Ez0D8FFowYXjRYWvAIoH1Xgs9vzqQAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetText.Target>
+                </uix:NGetText>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="487,165" sap2010:WorkflowViewState.IdRef="StepStatus_34" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that Precaution Toggle should be On" StepName="On Precaution Toggle" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Precautions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,225" sap2010:WorkflowViewState.IdRef="NClick_296" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="7f62cded-6dc8-4591-9cd3-cbe5fb74be88" ContentHash="oVs7Pfqmr0C3ji-d6k3DiA" CvElementArea="329, 196, 89, 36" CvTextArea="341, 209, 64, 11" CvTextArgument="Precautions" CvType="Button" DesignTimeRectangle="329, 196, 89, 36" DesignTimeScaleFactor="1" ElementType="Button" Guid="808e8dca-c096-4f49-ab2e-0a9d927f1d2b" ImageBase64="" InformativeScreenshot="af38037417781c95ebabfbddd795d8c7.png" Reference="Xc-565InekWGf1ajPaNvWg/-3Emf7CkDEShSJBBskNCnQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target DesignTimeRectangle="261, 241, 59, 22" Guid="8e969592-41cf-4058-871c-ae40a8b890b9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAWCAYAAAB+F+RbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIbSURBVFhH7ZY/T9tAFMD5It07dqjUoRMlsa0uDJWK1KEDA1KVoPABOnSrVELVDxIU+A6U2BWVqg79g1zLUAZUouTiu3NgevW9+M4HHAZTp1JChp/ie+/u3f3eOVHmGI2BMXYOGp0hF+OTztwpjYBTjkQsRnpDhsgxZRwxFZgk7pYsjQdKhtIhwniEnA04Ylo4idwtWVNwWpnJTiszWZ3u1y+wf+8+kH3/fM5tglWtQysYjYf+NtSezMOGm/zA6fPGhdw/NOSuIFf2+PUbONn1ULb/6TMcrn/I8tMm+/PhIxSV/HrwOMvnyfZCaDUssKyUdRfn9A/aOEfFq03YiRi4b59mscYWhMkfHUYDrFFZWVN19fW1Wq1cWUII+IvPUTR89gLIn26WF7LygBriUNT/CJ3Odwh76TytKQJ16KQJw0EHvPYBCso4NiyVVfLJOmxK0iCXnEKwWS9XVry68kbFZ3/Py/JFblafl8i9W6hclrjQMCWbvhVqnlxX9mvc/fYDjpZeAjs8hnBpGccqnyer5US8UW2Mng2i+m3KfK5serOly+aSbtb+TXFMwhbUqxY03SRHXHhvO3hL4jsn4uLQ3NsA27YzrFXY8o9gs56NV1/Ng722DQEJRvGmB3EcI0zs4VTAcRyk4vwvWQPqUFfE5PNN4Jxfiul1b0OpstchBP4FU80izGTHhUmgCKaaRZjJjguTQBFMNW8Og7+eyK4u1iqR5gAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target CVScreenId="7f62cded-6dc8-4591-9cd3-cbe5fb74be88" CvElementArea="418, 196, 80, 36" CvTextArea="429, 209, 48, 13" CvTextArgument="Tag Outs" CvType="Button" DesignTimeRectangle="418, 196, 80, 36" ElementType="Button" Guid="c0935f77-e9a3-464d-b12f-7f72dfb93106" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add-Precautions-Row'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,225" sap2010:WorkflowViewState.IdRef="NClick_297" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="da407fda-1b64-4ae9-bb2d-d132d4b2e1b2" ContentHash="mNpH4bBmZU2dKjRv0jhQhQ" CvElementArea="1516, 695, 35, 35" CvType="Icon" DesignTimeRectangle="1514, 693, 39, 39" DesignTimeScaleFactor="1.5" ElementType="Icon" Guid="72ca4099-b4f5-4eaf-a214-9c33a3d88ee2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAT5SURBVFhH7ZfJSx1ZFIfzT7QNQnfb3Stt3CgoZKGgoKCgmwSiOIIBowgiCgrOJMFIdCMiIqIiIuLCvYSgoEFEXag4IDjjPGDiPJ3mO3ClUnmvXvlo0lnkB4eabt373XPOPXXrifzAemK/8SPJNdzd3Z3j9f39/YM56fb21vHaKtdwyNPAViCAObcO6Okdt3IFx2AGAgCurQDcM560e9TJM77kCs6TgDg/P5cvX77I4eGhHBwcyM7Ojuzu7ur5ycmJXF1d2V9TmUn6SgO/4G5ubhRgdHRUerp7pLa2VoqKiiQvL08KCwulqqpKWltbZWhoSPb29uTy8vKrnLR715tcwZlQXlxcyOTkpAJVVlZKTlaOpL1Ik/T0dMnIyFDLzMzUY0pKimRnZ0tZWZl0dnbK1NSUehlZveUE6goO0fHCwoLU19dLQkKC/Pb7HxIc8o/ExcVJQUGBVFRUSE1NjULn5+dLcnKyhIaGSlBQkLZ//fq1Ah4fHz+E1Ezam1zBnZ2dSV9vn2SlZUlERIS8ePZC3r59K8PDwwq8uroqGxsbsrW1Jevr67K2tiaLi4sa1sbGRvVieHi4pKamSk9Pj5yenmq/TvmGFM6aD3b7/Pmz9PX1ycuXLyU6Olq91NXVJbOzs7og7O2txvP5+Xnp7e2V4uJiiYmJ0VB3d3fL9vb2QztTDexyhKNzPEOHgD1//lxGRkYU2N7WyehnZmZGczMqKkr7GRsb+2ZydjnCTUxMyPv37yUyMlI9Bhir1N7OjTEhgEpLSyUkJERzkP55Zpe55xXu+vpaw5eYmKgz5dybx7jf0dEhdXV10tbW9lXIrIan+vv7tT8WCe8wjl1mBXuFw0Pl5eW6KhmUHLO3MbaysqLhCggIkLCwMA2hvY0xcrCpqUm9R//7+/vfADrCMUNCSK5RLlh19vzwF45+COfTp0+1f/rma2IV7bzCEab29nZN4Pj4eF0U9jZWewwcRtmhvNB/S0uLfvI8ySMcIa2urtaXX716pXXM+hx47hkj0fEEcITrw4cPCmyMwmt9n5xkYdA/R2A9ySMcH3DqEm4HcnNz86vnLA5KizHAAgMDFY4j13jSGN6xvk+ekcfAUT+Xl5ftXNrOKxylAziWvB2Ojn8J+PXBgHIyEt8OR4kCjjE8wSGvcOwuvHmOHQefI2OE0uo5rsk9Y0zGDmf1HKH3JI9w1pzDg/acA57SYowcs+bcwMCALgpj9roHnDXn+B4b8dwRjoQnr/6P1cpzRzhqEfXH1Dlq3n9V5yi4PMfTwOF1e50z8giHEToS+c+//tbkdfLeY+CWlpbUW+YLQci9bee9wn3PbyvPPEnhvGl8fFxLCSuSuodHzEbxsWICc3NzumPGaxzp30mOcICYfVhsbKweP336pAM9RgYsNzdXt/VJSUnaj6+JOsIhOiYU1p0wO1mgfUHy1wUUW/OSkhIFy8rK0mv+ynzJJxwCAiByJTg4WI9sewgLi4GBsKOjo4dzatf09LQW7LS0NA0lHmND4ctjRq7gEElucpBFAiQ7ZEDxyps3b6ShoUHevXunv4MAUS6AwmPkGKHkJ8itXMMhwsTvHV6kDFAHyUNCZTfgOAKKt5iYW48ZPQrOiL8lPPnx40ctHQDk5OQoDEeum5ubZXBwUD3l9G/qJL/gEAOSi0CSXxi7C4xzoHjuLxjyG+576Cecv/oJ56/+BeABUf+O97/0AAAAAElFTkSuQmCC" InformativeScreenshot="a00370de7dcd9725397b585f23bfb94c.png" Reference="Xc-565InekWGf1ajPaNvWg/odRMKSF4yE6gqWe-mbyjtA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="da407fda-1b64-4ae9-bb2d-d132d4b2e1b2" CvTextArea="1503, 546, 112, 24" CvTextArgument="Organization" CvType="Text" DesignTimeRectangle="1503, 546, 112, 24" ElementType="Text" Guid="15701150-0d02-49d6-afa4-b7b3c438596d" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="487,165" sap2010:WorkflowViewState.IdRef="StepStatus_35" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that user should be redirected to precaution tab" StepName="Click Precaution Tab" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click Precautions Arrow'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,225" sap2010:WorkflowViewState.IdRef="NClick_298" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="e5aeee53-d9f0-4a31-945e-327ab24ae66d" ContentHash="wmocivh3TUm_Mi2anw7CqA" CvElementArea="630, 551, 19, 23" CvType="ArrowButton" DesignTimeRectangle="630, 551, 19, 23" DesignTimeScaleFactor="1" ElementType="ArrowButton" Guid="810cb861-1119-4815-8b4d-90011c4bdeaf" InformativeScreenshot="abd21c28d939885f062ea9c8b359bb6b.png" Reference="Xc-565InekWGf1ajPaNvWg/3tGkHOV9ZUSRYzJ4YFol_w" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="e5aeee53-d9f0-4a31-945e-327ab24ae66d" CvTextArea="491, 514, 64, 13" CvTextArgument="Precaution" CvType="Text" DesignTimeRectangle="491, 514, 64, 13" ElementType="Text" Guid="fe63dc54-a2dd-45c7-8569-da7ba5f1c251" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="e5aeee53-d9f0-4a31-945e-327ab24ae66d" CvTextArea="922, 514, 68, 16" CvTextArgument="Description" CvType="Text" DesignTimeRectangle="922, 514, 68, 16" ElementType="Text" Guid="693f9bd2-7974-4fff-b73c-f43220385ab2" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Go To Precautions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="487,225" sap2010:WorkflowViewState.IdRef="NClick_299" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="09ea156f-81e6-464c-84e7-0e9c63996710" ContentHash="lgAv7PD870CWQtob60ymgA" CvTextArea="710, 872, 160, 19" CvTextArgument="Go To Precautions" CvType="Text" DesignTimeRectangle="710, 872, 160, 19" DesignTimeScaleFactor="1.5" ElementType="Text" Guid="cff9a2e6-5017-4e2f-ba5e-f07eb8e07b88" InformativeScreenshot="00a1f07dc07df6a78bcc1e49aba5ebad.png" Reference="Xc-565InekWGf1ajPaNvWg/5wDGFeUKKkG_e-2oxPe_NA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="09ea156f-81e6-464c-84e7-0e9c63996710" CvElementArea="659, 809, 36, 36" CvType="Icon" DesignTimeRectangle="657, 807, 40, 40" ElementType="Icon" Guid="a1519488-594e-4540-8a8f-cba81dc0f119" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPySURBVFhH7ZbLK21hGMYNzsBfIBOSgSQZSQhJCEkGhKSIgQHJwEBRFMXARNJOMhCKUhRFMTBQiJJr7rnLXXvvM31Pz1N7p2/Za33L5tA5Bk+Wtd79rd/3vJf1BbhcLvnOClBvfDf9APqrH0B/9X8A3t7eytnZmTw+Phqe+at3AQJmfn5eBgYGpLOzU5qbm6W+vl4aGxulvb1d+vr6ZHJyUjY2Ngiv/t6ObAHiZcfHxzI9PU2o9PR0iY6OlrCwMAkODqYiIyMlNTVVKioqCLq8vCxXV1fy8vJiWE9HtgAXFhboUnx8vCQlJUlJSYk0NDTQRbjZ3d1NcMAhJjY2VnJzc+nm6empYT0daQE+PDwwpR7XCgsLeT0yMsL7a2trsr+/Lzs7O9wEgABdVlbmdXN8fJzruN1uw/pmsgREao6Ojugc4OAc3EJ9qbGvhXLABgCJtMPp7e1tQqqxZrIEvLy8ZM0hZVlZWYSDWzrF72kmpDk7O5ub3NvbM8SZyRJwcXGR6YRzcAFwdsYJINEsKIvk5GSWgB0XLQFHR0e5ezQE3FOfW+n5+ZmdX1tbKyEhITI8PGyrYSwBHQ4HRwncm52dNTzX0d3dnbS2tkpERATn5MrKijidTi2ZAt7f30tHRwfnXFdXF2eaGqMrjKCEhAQO9Lm5OQOIL5kCXlxcSEtLCwcw0ru7u2uI0RV+j1KprKyUiYkJA4gvmQKiftra2ggIBzDv1Bhd9fb2skk+FBDq6enhHEMnY2Soz3WF2kMN1tXVfVyKoaGhIQ7oqqoqDl71uY7Oz8/ZZEFBQWyWpaUlA4gvWQLOzMwQLi4uji6iI9UYM11fX8vY2JgUFRVJVFSUTE1N8fCggviSJeDW1pb09/cTsKCggC7CETXuLQEOg768vNzbIPhEPj09GUB8yRIQo2Z1dVXy8vIkJSWFL0MtAhJNpMarcGiO8PBwycjI4DW+LCqEmSwBoZubG55QqqurWeg5OTmciwcHB2+mHPBIKzYDuMBfgXQQo+ZTAOHUyckJIVHsmZmZkp+fLzU1NaxLjCC8HA6hWxFTXFzMuLS0NP4FYGlpKUcMPn0qiC9pAXoEtzY3N3kqwYtDQ0PpUGJiIl1FCcBhdCsaAg4CGvCAQyzGDBoFa6kwb8kWoAcSqcWpZHBw0OsYOh1AcBWjBEc0bAbphuAc4GJiYrzDWqebbQO+BkXa8X1G0yD9EK5xT20ipBXOAc5Out8NaFd4GTYFKDvp/quAENJqJ93agL+d/un1WoeHh3QONdvU1MRrjDL1ndCXAEL4AMA5wK2vr/N/NQbSBvwM4bwJ53zBQV8KqCNtQLfL6ZfU9XT17wB+lb494B805qQ7ssWTnQAAAABJRU5ErkJggg==" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="09ea156f-81e6-464c-84e7-0e9c63996710" CvElementArea="659, 869, 36, 31" CvType="Icon" DesignTimeRectangle="657, 867, 40, 35" ElementType="Icon" Guid="f8a1cae0-7d3d-4026-b5a4-3be11d00aa79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAjCAYAAADmOUiuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAROSURBVFhH7ZbdK25bFIf3n+KCoihFUVwoiuJGiKKQhJAbipIohCRRLhCiKIoLRVEURVEIIRQhhBCFkHF6Rk29e63lvB/a5+wLo0Zzfb1rPvP3G2Ou95f85fHLeuFvix/A74bHgB8fH/9L/gCafHh4kIuLCzk9PdXx+vpanp6e5PX11fasa/4ngMfHxzI4OCjFxcWSnp4u2dnZUlNTI+Pj43J0dGR73jX/OCDKDQ0NSUFBgcTHx0tKSspnZmZmSltbm6ysrKia1t+S3wbkxTc3N3J2dqZKMV5eXn5OyL26ujqFIRsbG1U9jgMDAxWaa18p+S1AIGZnZxUgKSlJoqOjJSEhQUpKSmR6elphee7w8FB2d3cVghokt7a2pKWlRRITEyUqKkrm5ubk7u7ONodPgBT23t6e9Pf3S1ZWlqSmpkpGRoYeM5I5OTl6Hzhstk7MO4DEej8/P+nr63NU0WtAXoyVPT09EhcXJ0FBQQrI+eTkpEJVVFTodYBHRkbUZuvEJrEXQGoRla33vQI0cA0NDWolEM3NzbK4uKh1Bwjj9va2VFVVqe2oiYrWiUlKhHoEsKOjQw4ODmzPeAwIHBN3dnaqcgACsbq6qtBAAMdzTDwxMaEKhoeHy/Lysm2/4xnqLi8vT4KDg2V0dFRr0yfAl5cXm600AnVIfQGJtUZJs5jCwkIJCAiQ+fn537YR7lNvqEeTkEtLS45bjVtAA2e1FVWAA4QujoyM1Ovr6+sKACwK8jzHrpOvra1pB0dEROjGTYPwdbHCuQUEbmNjQ9rb2222AkfNAUWTcH9sbEwXQ5qth+sswigHHI1hNu2uri6tPWsJuAV8f3/Xfay3t9dmq3kZIEDHxMRo53KOxeyN/IZkQVw3tqIccNQdcE6d6xHg/f29DAwMaBey4xtbDRwjdmItCrLFsCA+a5yHhIQoHOphr6utnij3r4DPz8+6Mj5HFDAfeb6Xrhsuk3ItLCxM0tLSZGFhQa6urrQbc3NzpbKyUmZmZvQaz9XX16tyPMuWsrOzo/O4C0dA/grxcmygiJnc2mGsnEn4TCUnJ+s/E2DoRooeqJOTE83W1laFCw0N/YTzNBwBkb67u1utRb3Hx0eb9CST5+fn6+SoBtT5+flnsjDgsNUot7+/75FyJr4EpEYALCsr0xda4UgsHx4eVkiULCoqUgj++wFm4L211TUcAek2JsFidnqAnSzmGiqiNoB8slALyxlZICOL9cZW13AExFLsio2N1WTHxxrTcUBxTqIi53y2aITy8nJVkhHVqGXue6ucCUdAgu8i2wKdDGRpaak0NTWpWnRobW2tNgONYeze3NzUugOKkQXc3t7qfV/jS8C3tzf9v8auj33+/v5qOcdYx1hdXa3qWGvTKX2NLwEJbKEeUQS7UA0oGmBqakrh3G20fxSQQEn2ReyiLrGOgjfWepq+hltAE9YJvU1f4wfwB9CEdUJv09f4BwXS3XbQ2f9ZAAAAAElFTkSuQmCC" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New Precaution'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_301" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="0501e335-0003-4f58-81e6-ad6355cb7265" ContentHash="z3uE9UBMZEa6nRzym3dPGQ" CvTextArea="59, 353, 74, 10" CvTextArgument="New Precaution" CvType="Text" DesignTimeRectangle="59, 353, 74, 10" DesignTimeScaleFactor="1" ElementType="Text" Guid="46d6f81a-b480-4bd3-9bef-e473333b8fed" ImageBase64="" InformativeScreenshot="6af5fba8e2063d21c09a1bc564465ee2.png" Reference="Xc-565InekWGf1ajPaNvWg/AtAVStt3g0-cNdjyvDvWIw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="0501e335-0003-4f58-81e6-ad6355cb7265" CvElementArea="28, 350, 19, 20" CvType="Icon" DesignTimeRectangle="26, 348, 23, 24" ElementType="Icon" Guid="f7900cfe-1d8d-4702-8131-27688acbdec3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAYAAAARfGZ1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGQSURBVEhL7ZShssIwEEXfT1QiKrEIBAJRiUAgEIgKBBLHB1QgEDgEAtlPQCAQCAQCiUAgEBUVqIoKBMuczDST0uY9HgOOO3MnbNicpNtsf+SD+sJLZYXfbrecoyiS/X4v2+1WjcSPOabRn/A4jmWxWIjv+wUzb9sE/QpP01RBer2erFYrOR6Pcjqd1Lher/V/HODfcM/zpN/vS5IkhcWYzYfDocp7/A9Z4TxytVqVy+WiF1yvVzkcDgqazbFxo9GQ2Wym5zAqhQNstVrq5ZkLADuOU5gn5vRmeVApfLfbSbvdzgGwDY45zGaz0TEqhS+XS1XrLHEymUitVlNlAs5IHASBzhkMBhKGoY7RU/DxeCyu60qlUlFwRuLRaKRznoZTlk6noxMzv6UsvBiS2cQE2OB0bLPZzDUUKoWj+Xwu9Xo9d8e5goDNOX5zU6bTqZ7DyAon4WNNRAJQak+Lc+Lz+awenZGS0f5c2ZfaH7OQ7ut2u/qDhYkpxcsfLtOcltPzwcqe4jHHNLLC36EvvEQid7jc7tGcXK4fAAAAAElFTkSuQmCC" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="27, 325, 89, 17" Guid="d7c1daaf-c910-43a4-afaa-108b49e89d89" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAARCAYAAAC2AACuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIFSURBVFhH7ZVtTsJAEIa9A9BoPJrQEM9jCA09BVA03sEvqOIdCBSISf9qxI6d2Z0yLSW2Bhp+7Js0GXZn5+PpdDkDo6PLQK5ABnIFMpArkIFcgQzkCrQDeezUwbIsehoNByZ6/eTlO1RzvTmEUC8Vle9gvzZ4S71wYKUgz/tXAmwId+1zsByffp26EFS93QS7AKwIfOg2LKiqtQQyJ645+bO7GF4nE87TwmeaN124ruEXYEPfc7UfNxvCyI7PuC754l7PG8QwlM2NcizOwetLz6YX33H1Xg6ZBNpjQLla3krvxNITjg/Geft+3snDObDz0nWI+Pu+hkKQP1cjgohx2c/urxMboQfRqyqOkiuw0lYNLhVw/ZJo+nJs2TTal9aFapYaymlErMs4XJ+CHtIAvLwDbOb39JKZk8xXtg70Z+DBbAqT6YxsqWKTLIKyHwaWwPl6YTsLmQuRRW0bSvtgQ5xPNirrkMI4CIAf9snCZO2DzENQqo7YzubNiiD/wBc9WCwHiqI1JcR8eZOM05GytT9PzbbYIpDTtmzoL8iyhuzv9F4Ig1aP4vx3kvPq2KzG8PCBi6pPrkMqBRlFEOh+UcA7T/H3FWuRuZPXUXRQyByLpyIPgGyOhfvZNYwrz3BM/GPs3QZJLj4nc5SrQ/XGvsl+Rsl1YXQ8GcgVyECuQAby0QXwC2N3hnopvz/fAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create-Precaution'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_304" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="2b35e1f7-da16-464f-9d71-ed0658fb0d3b" ContentHash="1twDp7jm70-lH4O11XYg9Q" CvElementArea="436, 640, 190, 62" CvType="InputBox" DesignTimeRectangle="436, 640, 190, 62" DesignTimeScaleFactor="1.5" ElementType="InputBox" Guid="5369e72d-f300-47c8-a4ff-665024b37946" InformativeScreenshot="4a9ec2563353367a73a43380c4af5201.png" Reference="Xc-565InekWGf1ajPaNvWg/TpkEUreLZUCrSnepSiWQbQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="2b35e1f7-da16-464f-9d71-ed0658fb0d3b" CvTextArea="461, 875, 188, 21" CvTextArgument="Associated Hazards" CvType="Text" DesignTimeRectangle="461, 875, 188, 21" ElementType="Text" Guid="13499e6f-8fbb-400f-bf1a-36ed467f2606" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Created-Precaution'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_104" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[PrecautionNo + New Random().Next(100000, 999999).ToString()]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="2fe736c6-0d28-477b-9b15-9a276c01af7d" ContentHash="eBHRcUBI5Eq6hoLCdEnRQA" CvElementArea="227, 296, 102, 34" CvType="InputBox" DesignTimeRectangle="436, 640, 190, 62" DesignTimeScaleFactor="1.5" ElementType="InputBox" Guid="a550c012-112e-4148-ae84-54fd71eddb48" ImageBase64="" InformativeScreenshot="0a16ded413ce68c95e99714468896889.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/vpXP8wXrYUyhsw-oy_a_mg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target CVScreenId="2fe736c6-0d28-477b-9b15-9a276c01af7d" CvTextArea="231, 280, 59, 10" CvTextArgument="*Precaution" CvType="Text" DesignTimeRectangle="437, 608, 115, 19" ElementType="Text" Guid="97fb9323-7f6d-48ba-a246-c1a225e8453a" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="455, 856, 209, 61" Guid="b28e7990-f2d3-4f15-9572-bd23bf942c28" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAkCAYAAABVCm6XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL8SURBVHhe7ZjhbtowEMf7fqsEgu09plWAgL7EREeQ2FOwqaDxcV+nFsH2AtWklk4aD7A1Xv5Ozj6HJBTotPV0P8mtYhzHvp/vSHtiFBGoSCGoSCGcxHFsqCnPF81IIahIIahIIahIIahIIahIIahIIahIIahIIajI/wj8b+3QtlPk9bhmmv252WTXf5eN+dDumuk6uyxhFXV2jsmznnVMd3abXXmWo4Z5u8guLBsz7ew//+GsTFSLkp/HUSkyNl/M+GxsonbLTNa/s95/j4rcplLkr8U7cz67M7ezrv1NoL/RaNjm+zdm3m/avvrpe3NlEz47DM20/2WtFxwIZDvNM1g82D4vyc/HPy+6B+ujvhdjHxLIQx+eGw1bB4mkOfjc8d3E9F/5tdF+i8YC7Gk+H9t1pPOuXExORyMm0vejCv60fY+jUiQWgMBj4W9aH5MtgiTASZaSKBoDuZ1ZunuM70Tp0hB4CjifB+NdYBLZ2AzmdCK/XrpgppWByntYfvmzAIIJMVtrTg5FmUgKPjUKOJ47mX7PRqZ7pecSlOlVY/EMLpYfnofFwB4EfHr/qef64+WwcL1llIosCh5lE2UFXxwCh1PKs44LSvHzcMEcCoB9fnY60fz3dCiSZyM1BIACTOSviV0ZyUX7jEqBhLygorHhAciXUn8NebiXxO5DqUhePqnx8gogg4sDJBQbPEYkBLkMLzhUFBg+jvMUIsOsDoWEa6oe+1iRBAktWm8ZpSIR6Au2QVroTbwMNoBFQgwCykvoPqUVwaNyXSgyCFIoMh9AElPUf5xInqlh1oLysXmR4TNx3+v6hRXJxz1JaUWQt//kSL9nhp+Tl5/ryGUpyfhx/829nOTL6yEvO/w+rGU+aDqxdB/dw8srL3XIQurv9Xp7iwT4HPdj7XhhwVr4/tFQCnEIi8YihnmRSY/bW/2sbUUu4xsbQ9e/Z3mtfNlRng8qUggqUggqUggqUggqUggqUggqUggqUggqUggqUggqUggqUggqUgTG/AHQMxwlLEAgfQAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="52, 753, 188, 36" Guid="96084817-1f1a-4cfd-9946-529ebc000e1c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAAWCAYAAAAy/emjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIiSURBVGhD7VZrTsJAEPYOQKPxaGJjPI8hNHAKtGi8gy+sjzsQ5BGT/tWoHTuzO2WoVbrE6PzYL2kYdmfn8X07hS3wUAkvjFJ4YZTCC6MUXhil8MIohRdGKbwwSlFLmFHUhCAI6Gm1Iri16+qRRFRzs30CqV2qiyTCfkOIZ3bhj7FWmMlgT4iRwtnBNgRRQt+0A8ltHrQhrEFwBgl0WwFoae1HYbjYRlQ9I08nh8Uk8a3kM+2jLhw2cNJCGMR968cEpTAM8zP9PvniXi8+zgk0NpPDsTgHr8/ikC5Lp2/3KtgsiL6cUq79eG53cthJwgfj3L9df8nDObBz5zpE/E2nbmNhXuZDIh5rYb9wsChsFGqa3ZmGqGAjhrQNKTMjkhWWbnmFLYlCezfYMQQRCRXNi3UZh+szQqV0aW4eAd4n53QxmFuZz7UO9GeRpuMHuH0Yk+2CzSdGFMJ+WIwUiV99bJeF4eJlI0sSVn2QBM4nyZF1SGAcJI0f9ikLwPhOGL44TnXkdjmvK74I8wGvxSc+2CAnz7IFFYk1Vk0M3sIV2/rz7Vw2WEeYVVuSsE4YWUP5++peCsf7PYqz6cRU1fE+H8HFMy6aPrkOF6wVBkHE0fvSiNS5ymc/x1PpN2aRZb8qDMfi21dFmiSEgfvlNYwrz3BM/HPQO50WuficzOFWh+mNfYt9R/z4KvP4P3hhlMILoxReGKXwwiiFF0YpvDAqAfAJVsnnowqKgPoAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Precaution-Description'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_306" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="4de74677-034b-483a-8c14-06ec30599018" ContentHash="aiTANdAnZ0ec5t2b43rHhg" CvElementArea="373, 296, 354, 36" CvType="InputBox" DesignTimeRectangle="373, 296, 354, 36" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="b77734f3-227d-4e87-8437-5c4e73fe97d4" InformativeScreenshot="b6d6cba143bae91bbb3740b8b6f2f53a.png" Reference="Xc-565InekWGf1ajPaNvWg/4Q6BUhWCsUy5QB1IMmUTIA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target DesignTimeRectangle="222, 273, 75, 24" Guid="7dfdbb74-420a-461d-9b05-0114d8f69c0a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAYCAYAAACyVACzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANaSURBVFhH7ZW/b9NAFMf5R9iRGBADAwMDJHESQ5EQE4iGppChCAYGBoQoSigC8Tfwo02KxD+AECVp2VEHJELjhPBDogKEILHPZ5cBfXnvnHOTEgguVVk8fOTzu3v23SfvOTtc10XM3xHLikAsKwKxrAjEsiIQy4pALCsCsawIxLIiEMuKQCwrApuW1elaKE8YSCQSCtMwkRq/i5WuPXT9tvGtipJ5SO2l6TrD12ySkbLEp1V0lp+juXMXOg0LnU+fVVzLShVrwTp7CdMZEycrLwfytwOvOo1stognjhg6v1WMlNVKH8f7wgUla3XqItrHTqj4n2Tx5g0jh0J+LKy21nxBVV9/Bepn6PhEuaGeVS2ux8IKoYopmmm1xnGbmDuZVu/md+m1LKwm6ijnKK+3r43zLJTz1ZqZm6oKeW6mOvz8/YyU9eHSNKzde5UsvvI9xze2oWGSODpYy5XhBq9W/WCtVUHOMNR9v9SVh/nwAF+X5nCt8hR1UcOzyptAUHM+zPudLH4+/xC/iOC5XkvqHB3XY53DP07m7Cwabjc89zBGynLqDbT37IO1/6C68j3HPfv1wC/Yj6gWkTQm8KAZyOL7jHFkAM7jTbLgN7YLKWVIrUQiEtmQKwsU79Rw/XAC+YoF32nj/pk0jNKiWt+oTMI0S1gQ9JzvFh5OZoK51gOMp7O4vkj5toX5XBJG7h4s2cadSRr38vl9R87dwosOID0fDj3Hk3QWsf7N8117tKzPjx+hfSAF5/07deV7jkeRxRVyysigVAvmm1YgfKWcRyp7I/jW1EpKxMABe4I2ypJ+MB4pi3JmjKTKsWU9kEXx/rGWdfT8bSx/AWzei/RCWTzPe/0rWb8jkiyCxXBFJQ9lFNwa+hkZM4lsegy5wiwW3VeonD6MMRKWSucxSfNcDW+d4FC8Loz3DsuiOT6savQcM1RoT9aJqctof/0B36McksSypCvg0efAl0KNNy1rq+FN/09WJfDRpzYkKYxj0/eLpZEsJpbVhy0khPSVFNV+dF3zqR1FV7WgoD+uWFYPx/WULOGQGEK34pqkNoxlDcKttubR91YIha4uFsZw5cWyNIKqyemqse8H7ahbkuGq2zJZnkf9/Q/8svlths+gKkqfSUui9mNsIfETs1zhGL7L+48AAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="753, 276, 33, 20" Guid="3ddeb6f9-7a63-4a99-ae9d-887b33e7f7f0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAUCAYAAAADU1RxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD3SURBVEhL7ZJdCsIwDIA9nEYZXsE58cFTKE4PIs6JZxCqpxAsPYTILNO3aFeyH8fqEEUf+vBBUkryNWlDSom/xkoQVoKwEsT/S0RSYOA66IBmzK7J+YX56AW8dP9djBLHYJA2VkKrUR/XQufEJ4ReSrT8Xek8bSxCdAGSKZEI83UO4JaEq3j5J5QIrYMa5V9fFcsTw/lwg0JGOjdQ+2Oe5SFdR6HZfopeqGMeeo8JQEoTpshyNaowSqjRTna3JFYSy4GP2+hSKVGIY45cZLVMGCVU40WvjR3oJpDQs4R6NTXfz7JJgBcgj8t1n6m9jm9iJQgroZF4B6SDnYBRdOOqAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="3" DisplayName="Type Into 'Enter-Precaution-Description'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,250" sap2010:WorkflowViewState.IdRef="NTypeInto_106" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="PrecautionDecription" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="a1a8074a-6e20-43b7-934d-70f9be37d107" ContentHash="4ukxr-qi-0SeSwV8TLXj4A" CvElementArea="374, 297, 332, 35" CvType="InputBox" DesignTimeRectangle="374, 297, 332, 35" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="89d58680-76a3-475d-9a90-28573241a08e" InformativeScreenshot="b2e80e82cfd15f763e1430781bd52dd0.png" Reference="Xc-565InekWGf1ajPaNvWg/r5WLivIAvkuFghCd7y63iA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target DesignTimeRectangle="706, 299, 28, 38" Guid="8684e8d8-56aa-4a63-82c6-e4e502076176" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAmCAYAAADX7PtfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMASURBVFhHvZbJSmtBEIazdAgiqMnenbpTkZCFJlmJGxd5DRF9AxGXDhs3griOEXyDaCIOD+AmBHFCBTeOUXEs+eumcsu+p7tFk/tB0VU9/V1d5yQn9PHxQT8xoH1gjpmgL1Txa07NBfWG8F2x5ldX+vb2Ru/v7+wLiNEvc4D4aH91pXojiAiIZQxIDHMKBp0eBG0owNfzNIi/laG5EEifeX0+rIK27GxAVM9BLAfRB3JmqCdqPwi9udTTXIPYKZhOpykcDlNzczM1NTVRY2Mjx7ptaGjgsZGREXp6eqqsDMYr2NXVRZlMhjY2Nmhzc5Mtl8ux5fN5KhQKPJbNZqmvr49ub28rK4NxCmKwt7eXTk5OqrXRNdL+2dkZDQ0N0dXVVaXHjjPDlpYWGhgYoEQiQclkkk37EEEcj8eptbWVbm5u/qmbxnulnZ2dtLi4yNeKa4PBX11d/WJLS0vU3d3NguDl5YVbE++VIrvj4+PAU+u+8/NzzlQEbXgz7O/vp8PDQ/YvLy9pamqqatPT01QsFnns4uKCUqkUXV9fcxx0QPAtQWQIIDgzM8NCaGGlUonfOcnw/v6e59rwCsZiMTo6OqpEf2rz+vpKz8/PLIQnFQbBwcHBaoY2vIJ4t0QQm+HhWF5eppWVFfZPT095zKyhfmU0TkEswpUeHBxwjE0nJydpbGyMJiYmaHx8nPb393kTM0P0BeEUxGBPTw+tra3R7u4u287ODu3t7dH29jbb1tYW962vr1d/aWxiwCkIRkdHqb29ndra2igSiXxpOzo6eCwajbI/PDxMj4+PvM4l6hQEuNqgDaRO5phLDDhrqFugfXNjeWoFm7A3QyyUxb7TA98c61ebC9u49LvWezP0YdYSrVgQ3hpioa82MkfGbHOAM0PXBkC+XTS2ucKPv7x9ZoI+3MKva+jDFK+roBaTGofm5+epnjY3N0ezs7O0sLDAfujh4YHqYfgzhpXLZf5RRwsLiVNr04LS4iB1F8Q/iLR1FdQGsbu7O/b/i+BfK9MnWmGPxZ2+moMAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="222, 277, 81, 21" Guid="92934730-80a2-4871-a670-34b78ad1465b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFEAAAAVCAYAAAA+RgJMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOBSURBVFhH7ZZNTxNRFIb9I+5NXBgXLly4kLbTdgAT4woilaJdYHThwoUxYlowGn+DH0Ah4Q8YI7bg3rAwEekUi5JIhBhs5xsX5vWcO3OHFovlY4TNLN7M3HPvub3nmffc9IRlWYh0OEUQQ1AEMQRFEENQBDEERRBDUAQxBB0YYr2hYXJQQSwWE1IVFYmB51hq6G3XH5l+llBQu8RZqpbRfk3I6gjRXF9DfeE9qidPoV7RUF/fEHEJMZEve+v0eYykVPQXP7bkH4Wc0gjS6TzeGGbb+f+tjhCXk1ewmrstIK4N30Htcp+I/wsiF6UoGeSyvYE7l6dywq3NjpV7yPjgZEXsVcpvxwJHkcPyalKsMawqJvqT4rf5t+RaBlk2FzGZoTz/XDvnGTTnizVjj4VreW6s1L7+vagjxG93R6CdPisg8pPHHN/ZzopKQKngZcsODv6g5HprtSIyiiLGzbCXZrJBYZvzE3hYfItFs4x3xRUPXHUqyNsNIu/PH+gvQDznt7bMkXH5LnP4o6VujKNiNYK696OOEI3FCmpnzkE7f1E8ecxxR//c8sWbZZbyiCuDmK56EHmcUnpaxHl8eAa/oluwbTtQuUCAYulA92cpXi9jtDuGbFGDa9Tw8noSSmFOrK8Uh6CqBcyatM8vDTNDKW9ueRoDyTRG5yhf1zCViUPJvIBm1/BsiN79fP69nptP8KEO2I4Lg/ZxbKrF3L5TXUsXMskkLDnmuY4QN16/Qu1CAsbqV/HkMcf3A5EddVVJoVD25qua9yGWJrNIpB95d1m5IAC1FO6D2wnRdr33jhApZ0yJixzdXvQgUrz5XUK8dOspFn4AOp/FdgKIPM9nPRTE3bQviCQGxg6Md6WEuMXkHik1jnSyF5ncOOasTyhe60YvgUwksxiieXbPF8MrltcFcR8CfwCOt3OZnGO1Be1D7Bu+h9rmb7gO5RA8hmhbJhy6VlzbFO8sw3KE5JiBHhhi2OJijlNrNvDdpXaWsHS6HxkmQWQF8Qji7tJNalPbFWBEG9Nzy6W2NhstbSwVQWwjdhdDNA0CRpItvWVTO0cQ9yZu2S2H7nOTwJCkGxkki50q3No0LxVBlDLJfUZDvLuu19YsCUq4lNvdXy/hskKD6Dh0fxxCQTHHJK5BOEzWJOH57SudGMSbHBlB9NVci4j5LmSA/L9ROlG6T+Y5toU/X7tkHvljaWkAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="754, 276, 33, 23" Guid="47e798d7-696c-4889-b3fc-d19e7cd7bd8f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAXCAYAAACFxybfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD5SURBVEhL7ZNBDoIwEEU9XWOIGw7AEVjrxujGc0C4BoEbAGcwsMCw7X7Mb/JNgRRJ1Miiixempcy8TstOay3/xksQL0G8BNm2xPAYJI5jCVRgKIrCzOOZZdls/Sc4JVCIhSF0PJ2lqqrRmjzPvyK0KHG53mbz7ETTNBKGoekSRbAeY8zj/fRbF4t3Asl5HCxkH4fdCTtu760RQgcxfseqi9n3vTmOuq6lLEtJ09TMI06SxMR4KqVeRFEkXdeN8rhwSmAnKIIYEhgjqUvCjrF+rQBwSiAR/o69OhgoNJXArlkcouwEvkUO5lti1XH8Gi9BvATxEmQDElqeppEcX4oSL8gAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NGetText DisplayName="Get Text 'Precaution Random No Saved'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" TextString="[PrecautionNoCreated]" Version="V4">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable CVScreenId="a0af1703-0dd0-4ce9-b67d-abd62725b9a8" ContentHash="bw2cwG3Rnki9dVnh8ykL8A" CvElementArea="227, 296, 102, 34" CvType="InputBox" DesignTimeRectangle="227, 296, 102, 34" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="91f7f77a-9ef2-474d-8430-3c3e75eb7211" ImageBase64="" InformativeScreenshot="66de18b37c3d9debe619208b8b24fdef.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/AEoTPqSiKUakXW1zirSSAw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="a0af1703-0dd0-4ce9-b67d-abd62725b9a8" CvTextArea="231, 280, 59, 10" CvTextArgument="*Precaution" CvType="Text" DesignTimeRectangle="231, 280, 59, 10" ElementType="Text" Guid="710ed4e4-6499-47a5-a1c2-0b8bb0806474" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="240, 422, 106, 16" Guid="3a186452-4fb7-49a0-a5ce-908b02b8edea" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAAQCAYAAAD+mOowAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKpSURBVFhH7VbhbtMwEOb9mNSqhfdATG3UlJdAHU2l8BQF0Yj85C9iVQsvMCFtHRJ9AFiOfE7OPjtu13agEcmf5E2+nO277/Nd/YQCWoEgVEsQhHpkFAcOr1CXaYf645y29fzfYkvvhiNabOrpDqyT6F4fF5ssolF2Xc8MVrMevV7WE4UtLaLj9z8da0o6Sfn3cDSEKugzpecpJcMBzTe/a+vjIwjl4NfyDb3Kbug6G6n/DNh7vZ4axr6lfNxXtu7ZW/qiirQWu1/Zn3ViS3BUK+8zWd4pmxHB7Ce/+9YgPrY9TU3KEAc2nJtMBycJxXvIvYubOY2fm9g4X58vgJzyPFVxVPuuNSdns5kQytjRxX4qWxMNoXAAiEVgLwfvyxSAksCyylgI9oF4UVZlB/8oqY4GsUyo3Af+OvFSTASLPbVQXz9osqrK5vZrt0d5FgCyQHwj5lL0XUIxuTyYUJw7X3yvPatc+VwGV+o+X5whhZOX4245UULj6+3HWNuL1dQbL2AJ5SOHq4FvtTwcxOCWyaqRAlQw+0gBJThBdX59uzDM76QtlKwmHkiQCWS4c8Z9FSWFNBVRASS7Avh8bYHdVmfmEAdrWbhdsISS7Y2HbH8AyJbCACwYEniIUBBAV6jn0nDi0k/ibwhlV6VNuB3Tft9DhWKwYL54AUsoEHkhEuBAroqVFSCCAPEgTLa4Y1ofyOF26hXKIsEWyiWIiffZHyaUrDS76oDdvq5Q9plY96J7oYSSfge1PpDYfJJXfX76qXxcXCa6ypjsH7ff9I+/2/5OeUzIdYgln/S1cLyO18j2J1sRqojtcRwfLRSA71iP2PEgQCwyfwy0Klwyny84dIUqLTq37vlQCbUqrhSH2r6n/TUeEwH/J4JQLUEQqiUIQrUEQahWgOgPXsefmZCSEscAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetText.Target>
+                </uix:NGetText>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save Precaution'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_308" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="f21597e5-2219-4fa1-bf42-e996f9a76700" ContentHash="HSDcbsbIUk2KRFrzuxbnDw" CvTextArea="58, 414, 76, 10" CvTextArgument="Save Precaution" CvType="Text" DesignTimeRectangle="58, 414, 76, 10" DesignTimeScaleFactor="1" ElementType="Text" Guid="d1c80f26-bd9c-4a60-8c79-767a58c6f286" ImageBase64="" InformativeScreenshot="f5e36f784fb251502ba4d1b0294d1526.png" Reference="Xc-565InekWGf1ajPaNvWg/lt9Gn3Tok0KjI9jvcJWqNg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="f21597e5-2219-4fa1-bf42-e996f9a76700" CvElementArea="29, 411, 18, 18" CvType="Icon" DesignTimeRectangle="27, 409, 22, 22" ElementType="Icon" Guid="ea539a4a-4644-4f49-a628-62191db7c49f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEvSURBVEhL7ZItroNQEIXZA6ISiWAPiAoSECQIJAKBwCEQJBgkAoVAICsQ4BA4TBNYA4IlsIfTzA3Qn0dD0/S9PNGTnGTuz3zMZYbDL+kLXvW34LZtYZomDMN4atu20XXdnPFTm2CChmGIqqqgqipc12XxYsuywHEcRFHEOI5z1r02wVRRWZYs9jwPWZaxeFEcx9B1Hb7vQ5Ik9H0/n1z1EpgA5/N5Nb3AcRxM08Sqpxc+ahdcFAUEQQDP86sPhwNOpxM7p3vH45HFt9oF76mua8iyPK+u2gUPw4A0TZEkyZ2Xpr0NjqIImqax/7xYURQEQcDO3wY/mwpqGumjYFr/PzDNap7nbJQoJsBi+hjtN03DGvnyuFECNYgqoSQyxbde9ukezfqjNsGf0Bc8C7gAI1C0CiG/dqwAAAAASUVORK5CYII=" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="56, 378, 83, 23" Guid="5b8e9447-bbd1-4041-9bd9-cb0c622caf83" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAXCAYAAAB3e3N6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHqSURBVFhH7ZRNTsMwEEY5Acdj0SW3AIHEAWgorLhDYVeJBQdAQBdwBDaQonKBtrGZL/FXJmki+jOwmidFsZ2xJ36ZeC86ZrhMQ1ymIS7TEJdpiMs0xGUa4jINcZmGuExDVmQ+XYXYG4XUi3HxHGv9XZjcF3H/MPxcA5t1tyWM63vdlXaZxyEO36q+tczLceoIN0ch3uap808gp2zpT2iVOXwVgYOqr2UWsvEeq0rigH6ONsfL2LQG6ZJZPEjsdYgHsi6eh8+q3axexLGquY6u9uV7TmW99B4gk+J4X8zKvTEWQnVlos1nzDnL5bnMydL4b0XVLlOqEvcLyahl6a+a34XYTxvKTkKcLKo52XkVo5+Trt+8lHQmGw6refQHgJQvyQMY8/hS9QHHumQCvbaWqWOwD+SETHxUxiPmI7Xb6JQJ+qdFnMpKy4RahFwcxxwkhEjIh0SOaZqVScrKVF+9LU9TEEEeHYucm8pkBZKu8Z1kBtk4zk9uVL8IfmNUIygFjqqLvzfENllXZi2PiGE1YjNs4z1xROixbStzPp/XYrA2K9NMJkBybrR2ZsrF35jjnKfnaNaVWTsz5eKctjNTV6b+8Hq8PEKUTIxBqP7N0V7GN85MsrFMZ3tcpiEu0xCXaYjLNMRlmhHjNzOL6+t8Ty1JAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Element 'WO_Creation_SuccessMsg'" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable ContentHash="lraqaxDPoUS3p_Ay4zQzHg" DesignTimeRectangle="1176, 306, 152, 33" DesignTimeScaleFactor="1" Guid="7d4bde98-121d-4a9c-af34-3edb019a69a4" ImageBase64="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" InformativeScreenshot="b2d8eb2560cf4c4c6460d46ef6774e81.png" Reference="Xc-565InekWGf1ajPaNvWg/Uva33rV1FUyetBMuUJOjdw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="b058cd13-77ab-46c3-be81-eab49f795021" CvElementArea="1049, 313, 29, 28" CvType="Icon" DesignTimeRectangle="1047, 311, 33, 32" ElementType="Icon" Guid="c9686aef-79eb-4537-94da-6a216a4e8a94" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH4SURBVFhH7ZVbK0RRFMd9CSEvlKIQYiLKJZORSRIRER7E1HGJmcwpyhQPytTBwRnk8kRmlG+4+G/tOs6sfc7scS8Pv+a0195r/WZfSzK5G/pp/iUk/xKSvylxlDunmLNFfXuT1Jjsp+p4uwDfaFu0N0UfbqwKLYkFa00UrDCafEGfKWupYJmCJNIPJxTajVKp0crCiYCW7YgYy+V0IySc7LUSK3tG9WYPla22FEVNopMO74/Z3JJAifadKJtch7adITa3xFdi9miFTVoMU+kYWwMoJbAMtYkuNmExVG6ERE6ullIidmqyyYJoNgdoMZMQRb0x5ORqKSV69sfykgQBAflve1MTeXG0eesApYTuiXALjKYXlH28dYBSgptOgA3WakbetbkFhg9m38XcIKe3DtCSwHFFDAWlCH6lQHh/Om+MG20J1XJED+ZEHIX7U5MFCwDt5fDbmFJEwm1CDu2NGXREIWLfX1BXaoSNc2gfUUxz0GWlc5nhDZFL50UpAT7z2kYurgbwlQA//oABTOFHnvI6szv4KXeeXj9yt74cPtjUsTtI5UazFhiDsVxONwVJSOatdaqKd7AF3aDPjG2Q/XzF5vHythxMQIWVc8hw4hTeG6eGZFgUBPhG27KTFH24sSq0Jb6C3yFxkeUD30nJ5eMdG/g+bukFPOtHW+vYk3EAAAAASUVORK5CYII=" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:VerifyExecutionOptions.Target>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="StepStatus_36" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that created precaution should be Saved" StepName="Save Precaution" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Return With Value'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_310" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="dfe74eac-124b-4ae8-bc7d-d268f0416759" ContentHash="4uLAzhB8ZUCZDJQEpLwW3w" CvTextArea="1237, 154, 91, 11" CvTextArgument="Return With Value" CvType="Text" DesignTimeRectangle="1237, 154, 91, 11" DesignTimeScaleFactor="1" ElementType="Text" Guid="9ff173cb-2161-4439-909f-89f10db5397e" ImageBase64="" InformativeScreenshot="619a11b374eb2d93fadacdd5ab2b3943.png" Reference="Xc-565InekWGf1ajPaNvWg/CHWS5BPTlESFz1ibYCHe4w" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="dfe74eac-124b-4ae8-bc7d-d268f0416759" CvTextArea="1176, 154, 34, 11" CvTextArgument="Return" CvType="Text" DesignTimeRectangle="1176, 154, 34, 11" ElementType="Text" Guid="5275b3af-7a89-4f64-9cdb-49a9f9e874e4" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="1194, 188, 24, 28" Guid="d441497e-a9f8-4d80-9426-da704c6dc306" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVEhL7ZQhqwJBEMffp9BoMBiMBg2CwWAwCAZBQRERFKPBYDAYTRcMBoMfwG4QVDAo2AVBRUQFg2C4YBv5D9yxe7t67/F44YHhF3Zmbv47Mzv3ZZom/SUfAVc+Aq64CpzPZ5rP5zQcDpnZbEaHw0Ebq+OlwOPxoH6/T8lkklKpFJVKJSqXy5ROpymRSFCv19N+50QrcL/fOXEwGOTbO/2LxYLC4TDF43GOdfpFFIHT6USFQoG5Xq+STwS+Wq3GFb1rmSKAtuRyOe69aG+329RqtSQbRBBrGIZkF5EEcBPcfDQaSUEgFAqR3+9X7GhhJpOh7Xar+IAkgGAIrFYrPuOG6PdyuaRAIEA+n88+W+3bbDaUzWZpOp3aeUQkAQQVi0Var9d8RjKv10sej0fBSrjb7fh16aoGrhUg0WQysSuwzngMiEEF+Xz+exVYMxiPx1IQeDUDVIkZQMjpA5IAwAJBxPmKms0m1et1yXa73Ti20+lIdhFFAFXg6eGNW4PUAV+j0eAt/9EegMvlwpsciUS0m4wZYYtjsZhSqROtAMC/qNvtchL8eyqVClWrVRaORqNv2yLyUsDieDzy0AeDAYPnuN/vtbE6XAV+y0fAlf8uYNITzGSD/qU/kmUAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DisplayName="Click 'Save Hazard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_270" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="3370021d-bf83-462b-96dd-958444773055" ContentHash="P9HBqyaWuk2i1NA1BrKX4g" CvTextArea="97, 381, 58, 10" CvTextArgument="Save Hazard" CvType="Text" DesignTimeRectangle="97, 381, 58, 10" DesignTimeScaleFactor="1" ElementType="Text" Guid="0339d892-9a02-44aa-9e3b-a556b6a6a64d" ImageBase64="" InformativeScreenshot="29386f3239280bacf82e3db29f7b7e0c.png" Reference="Xc-565InekWGf1ajPaNvWg/havGGJ8IDEWoMiC7nGm5Nw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target CVScreenId="3370021d-bf83-462b-96dd-958444773055" CvElementArea="67, 378, 19, 19" CvType="Icon" DesignTimeRectangle="65, 376, 23, 23" ElementType="Icon" Guid="d502649f-1e8f-4151-b3da-c8d70b01fe47" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGFSURBVEhL7ZQhiwJRFIW3+Af8AQaDwWowTDQMIoYJRqM2QU0zoKJNRZvBYPBHTLAabApiMsgwYYLdYFHPcu46MrLPVVwUFvbAgfsud7535z7e+8AL9Q9X6v1wx3EwGAzQaDR+9HA4xG63O3/1XUo4wdlsVgCFQgGxWAzVavUCZcxcOBxGsVi8uYES7kOo1WqFdDotf+OLMXPdbhehUAj5fF65gRJer9fF1HK5RCqVwnw+x3a7FTPWdR3T6RSz2QzRaBS9Xk/qg7oLX6/X0DRNYLlcTsw4mUxisVhITbPZRLlcljiou/D9fo/JZILxeHxl27Yvo2i328/BH9HTcM/zkMlkEIlErszcZrORmqfhPFDOdzQayShoxszxQCkffjgcZO3rITgP0HVdWVPsmJ2/BM7YMIz3wo/Ho6x9KeH9fl+AlmXJ7YvH47JZp9MRM04kEvI08H1hjWmaOJ1OZ8KXlHBenFarhUqlctOlUkm6pWu1mlwowoPdK+G/UXDufwse1AvhwCeJHll/yS6sgwAAAABJRU5ErkJggg==" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="90, 351, 71, 14" Guid="7a02f6bf-a05c-4a86-82af-6516a0586cd5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAOCAYAAAB95wG7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG8SURBVFhH7ZVfTsMwDMY5wQ64R24BQpwAbWOaOARU4gXBHfbvFLAWEBdY0xh/bpKm3ZIVuj2tn5S1id04/tXuLqhXUD2ciHo4EfVwIurhRHQQzucb0eBBmxlRkRENZ9W8q8ZXOWVU7TefanramMmJhGjJjaJlOQ2qFZzhtabJokygh+MJcCZrRSMGlOpiBw6SGVyW4zFVNbtKtwLWJt8EAcXg+HtPV1jJa2sYCXw/OKZdu9X0xfthRwAY3+ey9u3vx51wPDhcNVJBL7oOhw+MNQi/APjDVwRGoeEZHE6S9Xx9jWxS3oA/PJdr/tFlooCIpJ0ABOdge7baOhtiAiRmOEcJlcVX93nAPcc5GhwbbLEpHBzYmonN+bBYf2a/ZKYoS7klX5Ws7WuXUOXYeG5vUxEigOEX4eYmWTt8OAJAl/EtqJototZwIKkaPlSocrJ3uRU/AEHVQACA+2ZLQcG28ioDVlc5TTAsPCPtxbIQYK0BAEBTOTu2gP4EB5K+9f69XB+bt4vvEqxolzu0hfXxnvHVtnIABEnX4vGQakDinp+cwzxfAdj9XnWGc846CAdv8D+jq/bteYoRFtEvqVzVl2k6+bUAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="91, 406, 82, 22" Guid="204a4b3d-94fc-4a0d-a3d3-38229fd6933f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAWCAYAAABT5cvhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIMSURBVFhH7ZVfTgIxEIc9AQfk0VvggxdASDTGS2h8ILx4BBFvIWEJJL5igNb5tZ06dLddSKoh0i80dMf+mX6dlQtdyEIRmYkiMhNFZCbaRW6D9sdsdtQ29XZqJEWqtdJPPaU7l7bdTMkkfVSldPdeuVH5kHsNpja2fqW9xsoIBV6mez4VkiJXL/YQDA76PNtakXcUl1XKfX4+ktheKZG+L2MHCB6Ki8pFUiQO8+b6zGqufirSSZOVxOMhhmNe0FybeTiIlAbkXiwDexmRNKfr1oIAI2xJa7lY51rpT8wjmVinf6t9vPqy+1Qin85w/8I4zvtPqEjCWBtJkThw00K+IgkIa3rlJ+/my+AlQWRkTbmXrCqI9KIgj9bH31e0PsuDJCPYieRqgxBUNej3aJyTyvnwPLBe2Nz5m2ODsem2clxFIicW5kTK2zONDk3nrcW9SJdkSG0vh3y1vUgSZgSL9blS5TpSpBzPb0NT7pAt4yy6jaRILChfQb5teWvyVsFHFa8AOS8kupcTCeR8KUnmEIp8nNn+6EHphSx1oin3HV02VyH6sXxDkiIBEgtvxxyInvmAcgz//5G32r2yY1MiQeNeEZF7FUbrczXFRMp80Dge5g55k1F9XButIv8DsspA+JyDsxAJ8GPmK++ISjuUsxH52xSRmSgiM1FEZqKIzEQRmYkiMhNFZBa0/gakZESGXZAnqwAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Element 'WO_Creation_SuccessMsg'" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable ContentHash="lraqaxDPoUS3p_Ay4zQzHg" DesignTimeRectangle="1176, 306, 152, 33" DesignTimeScaleFactor="1" Guid="7d4bde98-121d-4a9c-af34-3edb019a69a4" ImageBase64="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" InformativeScreenshot="b2d8eb2560cf4c4c6460d46ef6774e81.png" Reference="Xc-565InekWGf1ajPaNvWg/Uva33rV1FUyetBMuUJOjdw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="b058cd13-77ab-46c3-be81-eab49f795021" CvElementArea="1049, 313, 29, 28" CvType="Icon" DesignTimeRectangle="1047, 311, 33, 32" ElementType="Icon" Guid="c9686aef-79eb-4537-94da-6a216a4e8a94" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH4SURBVFhH7ZVbK0RRFMd9CSEvlKIQYiLKJZORSRIRER7E1HGJmcwpyhQPytTBwRnk8kRmlG+4+G/tOs6sfc7scS8Pv+a0195r/WZfSzK5G/pp/iUk/xKSvylxlDunmLNFfXuT1Jjsp+p4uwDfaFu0N0UfbqwKLYkFa00UrDCafEGfKWupYJmCJNIPJxTajVKp0crCiYCW7YgYy+V0IySc7LUSK3tG9WYPla22FEVNopMO74/Z3JJAifadKJtch7adITa3xFdi9miFTVoMU+kYWwMoJbAMtYkuNmExVG6ERE6ullIidmqyyYJoNgdoMZMQRb0x5ORqKSV69sfykgQBAflve1MTeXG0eesApYTuiXALjKYXlH28dYBSgptOgA3WakbetbkFhg9m38XcIKe3DtCSwHFFDAWlCH6lQHh/Om+MG20J1XJED+ZEHIX7U5MFCwDt5fDbmFJEwm1CDu2NGXREIWLfX1BXaoSNc2gfUUxz0GWlc5nhDZFL50UpAT7z2kYurgbwlQA//oABTOFHnvI6szv4KXeeXj9yt74cPtjUsTtI5UazFhiDsVxONwVJSOatdaqKd7AF3aDPjG2Q/XzF5vHythxMQIWVc8hw4hTeG6eGZFgUBPhG27KTFH24sSq0Jb6C3yFxkeUD30nJ5eMdG/g+bukFPOtHW+vYk3EAAAAASUVORK5CYII=" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:VerifyExecutionOptions.Target>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="StepStatus_20" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that Created Hazard should be Saved" StepName="Save created Hazard" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'List View(Hazards)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_286" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="721aef73-c7fd-4ad9-ad55-9e3613916d28" ContentHash="3DpREGBy5Euif1o9O0EaxA" CvTextArea="90, 218, 42, 10" CvTextArgument="List View" CvType="Text" DesignTimeRectangle="90, 218, 42, 10" DesignTimeScaleFactor="1" ElementType="Text" Guid="d77277fc-100d-42ff-922f-5128e80d08a9" ImageBase64="" InformativeScreenshot="2c33b06328a5bf5775a3d6f2faf8ad61.png" Reference="Xc-565InekWGf1ajPaNvWg/FfJwI9uKYUuPmtstHtcFzw" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target CVScreenId="721aef73-c7fd-4ad9-ad55-9e3613916d28" CvElementArea="65, 216, 18, 15" CvType="Icon" DesignTimeRectangle="63, 214, 22, 19" ElementType="Icon" Guid="1c3dc375-322f-48f4-bf37-a54b68dc2dbd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAYAAACUef2IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVDhP7ZIhDsQgEEX3WEgksgdAIDgMogLRQ1QiOAQCUVGB7AE4AsnfsKHdZBNKdlPMpi8ZM8m8ZP7MA524xQd/Kt62DUopxBhLp01TnKVSSszzjJRS6bY5FXvvMQzD19JMVRxCAKUUnHNorTFNU7WWZSlTb6ridV1BCIEQ4pXvOI7Vypt9chqFcw6MMVhrr4tiJ0eSj2eMue54O13e7Vdu8UEnMfAE1m9QoYNAhZgAAAAASUVORK5CYII=" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="721aef73-c7fd-4ad9-ad55-9e3613916d28" CvElementArea="53, 283, 188, 29" CvType="InputBox" DesignTimeRectangle="53, 283, 188, 29" ElementType="InputBox" Guid="cdf84b02-e7a1-4231-868b-de713cadfdb1" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="721aef73-c7fd-4ad9-ad55-9e3613916d28" CvTextArea="55, 156, 81, 19" CvTextArgument="Hazards" CvType="Text" DesignTimeRectangle="55, 156, 81, 19" ElementType="Text" Guid="2773f37d-014e-4c4c-897b-b882941912f9" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search-HazardDescription'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_328" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="17f6cf9d-a160-4de5-b34f-4e059beb3c39" ContentHash="GHZyJv6V2UuoaryDBFHOYQ" CvElementArea="422, 275, 217, 36" CvType="InputBox" DesignTimeRectangle="422, 275, 217, 36" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="46336cfa-fd61-452f-a6fc-bed9cf441400" ImageBase64="" InformativeScreenshot="d87670bda3eee5a21b2b100f093d0f41.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/ex-8dTv5jUCCA4gyiXBG0g" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target CVScreenId="17f6cf9d-a160-4de5-b34f-4e059beb3c39" CvTextArea="427, 253, 54, 13" CvTextArgument="Description" CvType="Text" DesignTimeRectangle="427, 253, 54, 13" ElementType="Text" Guid="f9fc1b14-344c-4dc7-b425-60dcad512407" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="289, 252, 46, 18" Guid="d2276793-8f64-46db-8ae9-b03d7c2f0cf3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAASCAYAAAAkAezhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN2SURBVEhL7ZTfS1NhGMf7D+qiNugmKuqiLipkpZHRjCarRGrIFC8WZC1IFJpYUFC0EMv1k1hlMUR06JCSZli2pabDzanTbXrUo+eXdVf9C9/O+57ecXZRypYXQRdfzjnPed7n+TwPX94NkiRBlkQqUZKpSIxJlrUYjYsCRGEZiqJk5eQrWVmh9b+uyFAkISPaU1awLGhsjFORJawKTiHVw0Qkh8KL6lOXk4/0i5HFZUjCUgac9BRENU/XnzGsCi4IAp2YFCCTEpH434CnvX7BMZHYdymFb2ISSfEb0vIPCsqAaf/VwKemptDZ2Yn07Jw2uXrgXV8QoVCIDsTychUDZRsl39QWyQhqHWfxwh+k4AyaPLPAf6fFsAflpfXoijNPTyNwpQTWpo+YX9K2no9YH31sQVHj3ACabSVw9Uxm5emVF3h6ogcv3fW42fIMvfFFrHBxBNpb4fV6NbX6aFzkEgj5PHC73HjS/gkcL9Jcf7sPAX8Afr8fsTke0b7nao4LN69fRYW5OD9wa1EVmgIDCIfD+PChG57qoxQ8GeuBq/o83C1u3FBj+yubEZ4eyYDfOW+BscCBtsEkhryXUFnbjIfuy7AeKEKdfxxLEx1wFhhh3GrC6UsedYAnqCo2w9FwFy0uB/YaivIDt2zZDIPBkCUCnl76Ap7nwafieO+/hTLzBXSMaTfO/EQX7tgsqPONgxfVq06NcRyHyaEgnjq0wUmO01KF+x9nVV9zeHv7JE40vsGsejUSq5Dz62KVqUgXGmwHccB8BhXWYmw75KDgxAJtzhKUN3QjwamWEHmEvLUoLjKh3GbHqYKdOHGvPwP+eHCBgr9utMB6O5gBXxePlzX1I9Rag8LKRxjhVzA/+hyO4060jSXR/7Aax1Tb9CYUrWm6F7dKS6g9yBAUULdxBv75WSWOnPOgXx2WnFmXjRPw8fArOEv3odRuV21iohYqrLkGxz6jzla7cbF9AEG3HSZzGey2chzetQlGQxkevPZlwAVFoIM02/fAuMOEgt3bsdFgyh1cmp9GJBKhNwiLTcYiiMUW6DspGhkdQSLFYWZiDMOjY/R7eGgwo3iKp3lcKoHhaIJ6neSk+BSi0ShmFrX/RGTz5N/MXIo+J5PZ16ZefwZfRaxhrlprHX1Ppv/guWitdfQ9mf6D56K11tH3ZPpHwSX8BHFP5cbxILpaAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="665, 248, 30, 19" Guid="b370dd72-9d17-4fb6-b4dc-8bb429e670cc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAATCAYAAACHrr18AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANlSURBVEhLpVVtS5NhFN4/6ENiFPSloj4URVBI9SErRWNFxYwhWcscSO+B9koYmAzKKGuomGiZExlpEZahldnUlYtenJv51J49L5v9jav73O6sJzXK+eHivs95jtd13u5p03UdhmFA0zTQ3TRNeSdfPB6XPv5OJ9kcuxDYmJQEGeRLJBLyTqf1DyjWmkSmkBUTubUKImViToyTY781PhPIipnceqePLMZVW8UJVqL5Ii1MBs2UycmmO4NsjrX6MoWNCKzCTMw2LxjH0UmJLVhYVVV5oZMTIFIGJ0PgjhA4NlPIVrPBAoqiwOfzwev1oqGhAfX19RLt7e3yGyXA48gUstWmIUT132c0Mo7Lly7CVVKMvHVZWJxjh7OkFOVX2xCc/Im4LkbwH9A1UyQ5PZYpwRsTgslYEsl4EjbaWBZNJkQVmqiGE9G/4/GFfNivPsN33cRYfydano7IOxGzHezrQn1jE25UV+BytRcdQ9FpYTOC1523ca2iAtfvPsbguBibpiCWTFVMYiTEIDthGrOEo721cOw/je6PKszJEO679uDMwwB6PHuxZEU+znvuoKpsP3L2XYf/i4KR1pMo2H0SnlsenHXkYFt5M4YmVKjJH7DJrU0J8SlFRdUzhfVv/fA4CnHGF0J0oBnOwuPwv1fwynMQBZe60zE3HXk44XuCOudWlNx8jleBN3jRdh72LS48Gp5AQjeml4vaTQnE1ZgU1eJi06nlM4Spfe8anLCXNaKjxoF9lX6ERcxM4XvOPLjq2nAlPwsbCg/DfdSNY2VulJ6qhf+jAkOdgi0Wi/1+GiRmWbS5hJXAAxStysKi7M240BWWvpfVB7D9XAc+0/dgJ9y7dqKqqx8PynehqLYXYcEVedOKxuanCKlilwwzNWMhSieDEqFzLmGabeuR1cgqqMazL+Jtp4SXZC/HyvUbsTZ7KeyVLQhNimXsa8GJ3GVYk3tAvI5NKK57ifGYeLKiMBu/RxKT86bK2Rakn0eHEfwUkXcpLJLpqdoLR01fOhlqNbU9NPoBgdGvaf9UQoU2OYbgQD/ejYwhSotriiLFOOV/p7+BxRgk2l1zCDu2HUTTW/FDkvJbZ2yNZx7NEL+AFpswL2FCeHTwjw4QJj4Ny0qtPgLz/FNYE2tuxUyi+SLNO0tYxy+CZoWirE46mQAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TypeSearch-HazardDescription'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,250" sap2010:WorkflowViewState.IdRef="NTypeInto_112" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[description + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="3e13d2b8-93db-4032-84a5-fc2ce743ce0b" ContentHash="pEWLq6SxrUCxhEfghC6lsA" CvElementArea="423, 276, 215, 35" CvType="InputBox" DesignTimeRectangle="423, 276, 215, 35" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="73a56353-461b-49fb-8932-b97884545736" ImageBase64="" InformativeScreenshot="80063f99ecdceb49960f63b73760043f.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/ZY3-1jtCSU-6c5-G5RWSyg" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target CVScreenId="3e13d2b8-93db-4032-84a5-fc2ce743ce0b" CvTextArea="427, 254, 54, 12" CvTextArgument="Description" CvType="Text" DesignTimeRectangle="427, 254, 54, 12" ElementType="Text" Guid="028ba170-6c7f-49cf-8037-ecbfcea9d2f0" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="291, 250, 47, 20" Guid="6e949bcf-487d-4234-aee3-74f0e92db12a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAUCAYAAAAdmmTCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPtSURBVEhL7ZTfa1tlGMf3H+iFJuCNqLgLvZijRFexYipLiVqKhpGWXkTYNAPLBqZMQWFjGaXa6HRINquEUtbQhTKLmdR1iW1tQ5Ombdok7Wl7kvMr2930X/j6Pu/peziBFLvGXgi7+HLO+5z3fZ7P85wv7xFdU6FqOpemaVy6ztaqCt2oQVE11Awdhm5+o7jYd1BVq1X+VBSF1yLRWjUeoKIauK8rXFSrUqnw74Zh1OUgNYSnQ7VaDVVF5VKVKmgfJRCFmpE1nN1c1AQ9qxqryVTTqjDUSt2grAZtsYbwJF5AxFU2BdZAo+6bEf1Zyv+gxiarKZZ4Td0wB8feiZEPj/194hDn94TnoCwBifbwBmxdNyv7cHSVASkVC55qkl3t9QWDsC9pT3j6ldQ5JaED/6Xnea1dQCGK/aWV8FAtoqg+RFn/m8PWQYv1bp6G8KurqxgbG0N5Y9OcADv0250kUqmU5c9mJGDFZGnNLVLMoC/wAX6MJzm8AKengKfLQ+Q5Yk8qtJOOoKvjPMbzwuNrSHzaDu/APWxVzOk3I1HHHts2WFyaxqCvHaGJlbp9e+lA8OXlCfwUPo+LQ9cxmd9BTcojMTqMaDRqajjG46pUQCoWQTgUxrXRPyDJ7BZje+OjMSTiCcTjceQ2ZWTv3GB7Qrj4xWc45W5rHt7b2oOBxDTS6TTu3r2FSO+bHL6Ym0Co9zTCQ2F8yWKvdA8ivTZvwV857YGzJYCRmSJmo2fR3TeIq+FP4D3einPxJVSWbyLY4oTzGRfeOxthTVxDT5sbgf6vMBQK4GVHa/PwnqefgsPhqBPBlyv3Icsy5FIev8cvodP9EW4umjfR1vI4rvg8OBdbgqyya5DFJEnCymwSPwTM5mlP0NODb+5tMJ9L+PXyOzh54RdssGuTbEPnD802q5lx9PtexXH3+zjlbcOzrwU4PNlhJNiOrv5bKEjMHqqMVLQPba0udPn8eLflBZz8esqC/35mm8PfvuCB93LSgj80z3cOTCE1fAYnur/DvFzD1sINBN4OYmSxiKmrvXiLWWiyYJiFy5O41NHOrUKNcEjb5AX8n9e78caHEUyxhunMoU2e4JfSPyPYcQwdfj+zjIvb6cSZzxE45rRZ7Cg+Hp1GMuyHy90Jv68Lr7/4JJyOTnx7O2bBK4bCmxn0vwTn8y60HH0OTzhczcFrW2vIZDL8ZhGxlVwGudw2f6fEmYV5FEoS1pcXMbewyNdzszOW8iWZ75NKBcxlC9z7tKckl5DNZrG+Y34n0R+gb+ubJf5cKdZfqXupMfy/SBQ9qPabx16zkR7DP6r2m8des5Eewz+q9pvHXrOR/sfwGv4BP7h7bsmLrzgAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="666, 249, 38, 21" Guid="8cc67fe0-e939-4877-b95d-587acba7b6e0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAVCAYAAAAq05ytAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAONSURBVEhL7ZXbS1RRFMbnP+ihQSnopaIeiiIopHrIStGYQmOKIbKsFKR7YFaGGIwykEZZolKiZY6IqEl0Q0vTUaecsPIy5tScOZcZ+ze+9trjOh5NyIjpIXr43Huts9nfb9bae2tTVRWGYZjSdR3RaFTOadQ0zRStJdEaaz4RspE5mXGCTNmYRoZhaMpb1ydKNjZnIDZlGK6aFY4BEykJRpNIJGKaU0xzFsVWcM4lUvPA2JhjEs0px98I/K+A0R9FUcz2kCmLYUlcURKvTaQkGIkBQqEQvF4vqqurUVtbi5qaGqnm5mb5jQC53YmUzdAFlCZaNDsGJydQfO0qcnOOIG2jHctTHHDlnERBSRP8098R0USLlyBNNcSPiLd9RuwbFmaxcAyxSAyqMnfBqBg0WqEotjFULCqqoIpqMKj2Fe1X0uEoeYqvmoGxnlY0dA3LORlz7O/uQE3dfdx0F6LYXY2WwWAczJjEm9bbuFFYiLK77eifEMdCDSEcE/tH5sBo5G6RTDCCIRAWxVFD/wks+LISzuzz6PygwJgO4EHuflx45MMzzwEkr05HkecOSvOykZJVhrZPIQw3nkXGvrPw3PLgojMFOwvqMTilQIl9Ez7zH24G4pEkwQiERwklqrYQTPvSA48zExe8AQT76uHKPI22dyG89hxGxrVOc02FMw1nvE9Q5dqBnIrneO3rxYumIji25+Lx0BSi2lxVGIQvlhVQvvz0IaKEJZQaUeItXQBG7RmodcGRV4eWcieyLrdhXKxZCHbPlYbcqiZcT7djc+Yx5J/Ix6m8fJw8V4m2DyHoyoyE+CUYBxLGchEWAwv5HuLQWjuWJW3DlY5xmXvlPohdl1rwkb77W5G/dw9KO3rwsGAvDlW+xLjYa7K3EXX1XQgo4izrhlD8fWRZgTgnnwv+BUxN42JgdLYaj6+DPcONp5/E2zYLlpy0Cms2bcGGpBVwXG5AYFpclu4GnEldifWpB8Xt3oojVa8wERYHnM7xTPy5IR8GYnFeglGCyklzMxamH0eG4B+dlHMJJmCflR6As7zbhKVWUlsDI+/hG/ls5meiCtTpMfj7ejAwPIYgARnCVBwXRRfHZRaAvBiQZYItJoZhEVRn+VHs3nkY99+Kh3Y2bz1j1vW8j6qL/yCWeKlaMhhpfKR/XgVJU6NDslLWHIn3+WMwVVxjqxYa/a7Mff+DLVHmvv8WmIYf7tG+pOY2+y4AAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search-Hazard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_289" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="bf12fc0e-d179-4fa0-ae98-bbfa8462ec00" ContentHash="MVwEHn4Xq0C7foCaNPqTyQ" CvElementArea="293, 277, 102, 35" CvType="InputBox" DesignTimeRectangle="293, 277, 102, 35" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="3fed56f6-726d-4f5f-b48b-12a233f44eee" ImageBase64="" InformativeScreenshot="baeac3676a7be3a8e9be695033000177.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/t1eYFtKcgUmXNILetwUGbQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target CVScreenId="bf12fc0e-d179-4fa0-ae98-bbfa8462ec00" CvTextArea="295, 253, 34, 11" CvTextArgument="Hazard" CvType="Text" DesignTimeRectangle="295, 253, 34, 11" ElementType="Text" Guid="2e91459d-422a-4dec-b1a8-3204dfb02900" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target CVScreenId="bf12fc0e-d179-4fa0-ae98-bbfa8462ec00" CvTextArea="427, 253, 54, 13" CvTextArgument="Description" CvType="Text" DesignTimeRectangle="427, 253, 54, 13" ElementType="Text" Guid="a26b7566-1974-4305-aab7-6b41e121a9e8" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Type Into 'Paste copied Hazard No'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,250" sap2010:WorkflowViewState.IdRef="NTypeInto_99" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Text="[HazardNo + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable CVScreenId="4dc3221d-2822-436b-83a4-34ac4660f4a1" ContentHash="iSFhrfznO0-I-pTKcQ7ayQ" CvElementArea="293, 277, 102, 35" CvType="InputBox" DesignTimeRectangle="289, 275, 105, 36" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="28f9c963-65e7-4841-bf6f-6a65c35616fb" ImageBase64="" InformativeScreenshot="4dfd4ef9d9b52e6163c2a8016843aec5.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/Yc8IuTFl9kWtnyaDvLN4AA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                          <uix:Target CVScreenId="4dc3221d-2822-436b-83a4-34ac4660f4a1" CvTextArea="295, 253, 34, 11" CvTextArgument="Hazard" CvType="Text" DesignTimeRectangle="292, 254, 34, 10" ElementType="Text" Guid="09680ced-a71b-4395-8a35-64a506b02f02" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          <uix:Target DesignTimeRectangle="420, 247, 69, 23" Guid="49e4de0f-7c22-4583-9b18-7c456c03ae20" ImageBase64="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" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target DesignTimeRectangle="62, 295, 99, 15" Guid="4f786743-8416-4c66-983d-38779a00e270" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGMAAAAPCAYAAADwDXG0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH6SURBVFhH7VYLTsJAEPUOloazGWy4EIQmjZ7BCOUYBgT1EEZbP+EAIuPO7kw7W1psK9Ga7Es2WYbZ7pv3ZgonILDb7azl8LtwZnQIzowOwZnRIRw2I5nC0PPA9329zuIX+Nh+UnaXsYE4MJxHtxSqC6r5NGx68OeoNgNWMOkJAxZjVVwA18k/MEMJGiiug2E9UZNZAH4QKwv/FpVmaIIV4rNRPDGm+0w3elGkv/NUd0VT02W4zzqUTI0mAx1HEeKJyZeC4P0Ys+IlZ8sEZHHT5SX0eiHw1WW8i/c8wl3WhIhmPPKJxHjT6WplxjI0BF7VxGAeFryCJ01E7pkk53MhSFQXS3ttFL0eins5odZZmW/BCKKFKORIHmk8h4v1w17cuq8pD7XHiTSabeB5dp81Qh00N2ObZsXi6yvPe89FUMAC5V6akT1XkpdFUc78LRdBP0vErXwJinP34zI8hEkFVJohuJbx2ONNdxxlMizQJZoUAgkQYUm+OBlMoI0ZgSoiXKkcsa8Sx8oXYD4sg/xc5M1nK81owWOxXtBmbPGog2ozEOoiNKTf72u3z0dXcJPkxLjzZFccxQwFM3H5b0mK/7S/McPqXgbloYg270DXw8ZwJ1ui03eSR3kNxEPH88ngZ9TFYTME5CuMl8Nx4czoEJwZHYIzozMA+AKtuBVOcPdn8gAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="StepStatus_37" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that Searched Hazard should appear" StepName="Search for a Hazard record using List View and query for existing" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DelayBefore="3" DisplayName="Click 'Select Searched Hazard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_291" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="2102d46a-feaf-42fc-982f-a0d5e6143a4a" ContentHash="hiwgIx2kzUG-RPQkISkfYg" CvElementArea="292, 275, 105, 36" CvType="InputBox" DesignTimeRectangle="292, 275, 105, 36" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="8ece9ed5-e391-4e0d-a092-02ba6405fa7d" ImageBase64="" InformativeScreenshot="0f33ea323bb29eba47106c659fa45a49.png" IsResponsive="True" Reference="Xc-565InekWGf1ajPaNvWg/m7WeSNHplESrVu_pa24zyA" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="2102d46a-feaf-42fc-982f-a0d5e6143a4a" CvTextArea="295, 253, 34, 11" CvTextArgument="Hazard" CvType="Text" DesignTimeRectangle="295, 253, 34, 11" ElementType="Text" Guid="2925a4a6-3779-4bdf-9c15-83b3a688a349" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset Position="BottomLeft" X="31" Y="21" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="StepStatus_38" ReportId="[In_ReportID]" Status="Compare" StepDescription="After selecting a Hazard record, the Hazard (HSE) main screen opens with the details." StepName="Search for a Hazard record using List View and query for existing" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NHighlight Color="Gold" DisplayName="Highlight 'Precaution-Toggle-On'" HealingAgentBehavior="SameAsCard" HighlightTime="5" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NHighlight_2" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NHighlight.Target>
+                    <uix:TargetAnchorable ContentHash="FbDIN7aPF0yyoLxZLjZBIg" DesignTimeRectangle="261, 420, 139, 61" DesignTimeScaleFactor="1" Guid="c67c23ef-5470-4993-b1e1-e985a27a4c3a" ImageBase64="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" InformativeScreenshot="4cc275adf6e0702a3e8a0dd3e0d946ad.png" Reference="Xc-565InekWGf1ajPaNvWg/mwFC1MtuyEqGg96pUU3LcQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V4" Visibility="Interactive" />
+                  </uix:NHighlight.Target>
+                </uix:NHighlight>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="StepStatus_54" ReportId="[In_ReportID]" Status="Compare" StepDescription="Verify that Precaution Toggle should be On" StepName="On Precaution Toggle" TakeScreenshot="True" TestId="[testcaseid]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Precautions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_272" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a91e6338-dde2-4e64-943e-df6210d996a3" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable CVScreenId="7f62cded-6dc8-4591-9cd3-cbe5fb74be88" ContentHash="oVs7Pfqmr0C3ji-d6k3DiA" CvElementArea="329, 196, 89, 36" CvTextArea="341, 209, 64, 11" CvTextArgument="Precautions" CvType="Button" DesignTimeRectangle="329, 196, 89, 36" DesignTimeScaleFactor="1" ElementType="Button" Guid="808e8dca-c096-4f49-ab2e-0a9d927f1d2b" ImageBase64="" InformativeScreenshot="af38037417781c95ebabfbddd795d8c7.png" Reference="Xc-565InekWGf1ajPaNvWg/-3Emf7CkDEShSJBBskNCnQ" ScopeSelectorArgument="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                          <uix:Target DesignTimeRectangle="261, 241, 59, 22" Guid="8e969592-41cf-4058-871c-ae40a8b890b9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAWCAYAAAB+F+RbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIbSURBVFhH7ZY/T9tAFMD5It07dqjUoRMlsa0uDJWK1KEDA1KVoPABOnSrVELVDxIU+A6U2BWVqg79g1zLUAZUouTiu3NgevW9+M4HHAZTp1JChp/ie+/u3f3eOVHmGI2BMXYOGp0hF+OTztwpjYBTjkQsRnpDhsgxZRwxFZgk7pYsjQdKhtIhwniEnA04Ylo4idwtWVNwWpnJTiszWZ3u1y+wf+8+kH3/fM5tglWtQysYjYf+NtSezMOGm/zA6fPGhdw/NOSuIFf2+PUbONn1ULb/6TMcrn/I8tMm+/PhIxSV/HrwOMvnyfZCaDUssKyUdRfn9A/aOEfFq03YiRi4b59mscYWhMkfHUYDrFFZWVN19fW1Wq1cWUII+IvPUTR89gLIn26WF7LygBriUNT/CJ3Odwh76TytKQJ16KQJw0EHvPYBCso4NiyVVfLJOmxK0iCXnEKwWS9XVry68kbFZ3/Py/JFblafl8i9W6hclrjQMCWbvhVqnlxX9mvc/fYDjpZeAjs8hnBpGccqnyer5US8UW2Mng2i+m3KfK5serOly+aSbtb+TXFMwhbUqxY03SRHXHhvO3hL4jsn4uLQ3NsA27YzrFXY8o9gs56NV1/Ng722DQEJRvGmB3EcI0zs4VTAcRyk4vwvWQPqUFfE5PNN4Jxfiul1b0OpstchBP4FU80izGTHhUmgCKaaRZjJjguTQBFMNW8Og7+eyK4u1iqR5gAAAABJRU5ErkJggg==" SearchSteps="Image" TargetType="ImageBased" />
+                          <uix:Target CVScreenId="7f62cded-6dc8-4591-9cd3-cbe5fb74be88" CvElementArea="418, 196, 80, 36" CvTextArea="429, 209, 48, 13" CvTextArgument="Tag Outs" CvType="Button" DesignTimeRectangle="418, 196, 80, 36" ElementType="Button" Guid="c0935f77-e9a3-464d-b12f-7f72dfb93106" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,165" sap2010:WorkflowViewState.IdRef="StepStatus_41" ReportId="[In_ReportID]" Status="Compare" StepDescription="User should be able to navigate to Precautions tab." StepName="Select the Precautions Tab and open the details of one of the registered Precautions." TakeScreenshot="True" TestId="[testcaseid]" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogoutFunctionality - Invoke Workflow File (LogoutFunctionality.xaml)" sap:VirtualizedContainerService.HintSize="486,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Reusable Workflows\LogoutFunctionality.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="486,158" sap2010:WorkflowViewState.IdRef="StepStatus_12" ReportId="[In_ReportID]" Status="Compare" StepDescription="User should be successfully logged out" StepName="User logs out" TakeScreenshot="True" TestId="[testcaseid]" />
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="240, 135, 1440, 810" ContentHash="oyIP_X0TG0WkP4hdbLuGwQ" FilePath="C:\Program Files\Omnissa\Omnissa Horizon Client\horizon-client.exe" IconBase64="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" InformativeScreenshot="9544b71c0a9bc3162a12e7976b4072d8.png" Reference="Xc-565InekWGf1ajPaNvWg/RQ5L7f5haEiT4y1wyB_y-g" Selector="&lt;wnd app='horizon-client.exe' cls='HwndWrapper*' title='SW Desktop (Global)' /&gt;" Version="V2" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
